@@ -9,7 +9,7 @@ const addVariablesForColors = plugin(({ addBase, theme }) => {
   const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
-  
+
   addBase({
     ":root": newVars,
   });
@@ -18,10 +18,10 @@ const addVariablesForColors = plugin(({ addBase, theme }) => {
 const config: Config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}', 
-    './app/**/*.{ts,tsx}', 
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -33,6 +33,9 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        "league-spartan": ["League Spartan", "sans-serif"],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
