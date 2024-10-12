@@ -34,9 +34,13 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        spaceGrotesk: ['Space Grotesk', 'sans-serif'],
+        spaceGrotesk: ["Space Grotesk", "sans-serif"],
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -49,6 +53,8 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 30s linear infinite",
+        "marquee-reverse": "marquee 30s linear infinite reverse",
       },
     },
   },
