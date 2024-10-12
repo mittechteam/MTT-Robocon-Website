@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { NavbarDemo } from "@/components/navbar/navbar";
+import Image from "next/image";
+import MTTlogo from "@/assets/logos/MTT-Logo.svg";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +31,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="min-h-screen relative bg-black dark:bg-white bg-dot-white/[0.2] dark:bg-dot-white/[0.2] overflow-hidden">
+          <div className="absolute top-4 left-10">
+            <Image src={MTTlogo} alt="MTT-Logo" width={75} height={75} />
+          </div>
+          <NavbarDemo />
+          {children}
+        </div>
       </body>
     </html>
   );
