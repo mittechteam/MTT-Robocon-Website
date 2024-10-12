@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-// Import your logos here. You'll need to adjust the paths based on your project structure.
 import logo1 from "@/assets/logos/sponsor-1.png";
 import logo2 from "@/assets/logos/sponsor-2.png";
 import logo3 from "@/assets/logos/sponsor-3.png";
@@ -24,7 +23,7 @@ const Carousel: React.FC = () => {
           Our SponsorOur SponsorOur SponsorOur SponsorOur SponsorOur Sponsor
         </p>
         <div className="flex overflow-hidden select-none">
-          <div className="flex shrink-0 items-center justify-around whitespace-nowrap w-full animate-marquee">
+          <div className="flex items-center justify-around whitespace-nowrap w-full animate-marquee">
             {logos.concat(logos).map((logo, index) => (
               <div key={index} className="mx-4">
                 <Image
@@ -32,7 +31,7 @@ const Carousel: React.FC = () => {
                   alt={`Partner logo ${index + 1}`}
                   width={100}
                   height={100}
-                  className="object-contain"
+             
                 />
               </div>
             ))}

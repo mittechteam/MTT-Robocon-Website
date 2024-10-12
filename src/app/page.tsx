@@ -2,6 +2,7 @@ import React from "react";
 
 import dynamic from "next/dynamic";
 import Carousel from "@/components/logoCarousel/carousel";
+import Footer from "@/components/footer/footer";
 
 const Scene = dynamic(() => import("@/components/model/scene"), { ssr: false });
 
@@ -28,6 +29,7 @@ export default function Page() {
         </div>
       </div>
       <Carousel />
+      <Footer />
     </>
   );
 }
