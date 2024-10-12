@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { Menu} from "../ui/navbar-menu";
+import React from "react";
+import { Menu } from "../ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import TransitionLink from "../transition/transitionLink";
 
@@ -13,17 +13,9 @@ export function NavbarDemo() {
 }
 
 function Navbar({ className }: { className?: string }) {
-  const [active, setActive] = useState<string | null>(null);
   return (
-    <div
-      className={cn("max-w-2xl mx-auto font-spaceGrotesk py-4", className)}
-    >
-      <Menu setActive={setActive}>
-        {/* <MenuItem setActive={setActive} active={active} item="Home" />
-        <MenuItem setActive={setActive} active={active} item="Achievements" />
-        <MenuItem setActive={setActive} active={active} item="Our Team" />
-        <MenuItem setActive={setActive} active={active} item="Alumni" />
-        <MenuItem setActive={setActive} active={active} item="Contact" /> */}
+    <div className={cn("max-w-2xl mx-auto font-spaceGrotesk py-4", className)}>
+      <Menu>
         <TransitionLink href="/" label="Home" />
         <TransitionLink href="/team" label="Team" />
         <TransitionLink href="/achievements" label="Achievements" />
