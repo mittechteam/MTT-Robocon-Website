@@ -1,7 +1,7 @@
 import { useAnimations, useGLTF } from "@react-three/drei"
 import { useFrame } from "@react-three/fiber"
 import { useEffect, useRef } from "react"
-import { Group} from "three"
+import { Group, LoopRepeat} from "three"
 
 useGLTF.preload("/robot_playground.glb")
 
@@ -12,7 +12,7 @@ interface ModelProps {
 
 export default function Model({ scale = 1, position = [0, 0, 0] }: ModelProps) {
   const group = useRef<Group>(null)
-  const { nodes, materials, animations, scene } = useGLTF(
+  const { animations, scene } = useGLTF(
     "/robot_playground.glb"
   )
   const { actions } = useAnimations(animations, scene)
@@ -20,7 +20,7 @@ export default function Model({ scale = 1, position = [0, 0, 0] }: ModelProps) {
   useEffect(() => {
     if (actions["Experiment"]) {
       actions["Experiment"].play()
-      actions["Experiment"].setLoop(true, Infinity)
+      actions["Experiment"].setLoop(LoopRepeat, Infinity)
     }
   }, [actions])
 
