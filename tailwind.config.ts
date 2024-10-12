@@ -34,7 +34,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        "league-spartan": ["League Spartan", "sans-serif"],
+        spaceGrotesk: ['Space Grotesk', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
