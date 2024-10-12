@@ -10,7 +10,7 @@ const Footer = () => {
       </div>
       <div>
         <hr className="border-t border-gray-600" />
-        <p className="text-white text-center md:text-left text-sm m-5">
+        <p className="text-neutral-400 text-center md:text-left text-sm m-5">
           &copy; 2024 MIT-WPU Tech Team. Developed with ❤️ by{" "}
           <LinkPreview url="https://mehul-uttam-portfolio.vercel.app/" className="text-blue-300">
             Mehul Uttam
