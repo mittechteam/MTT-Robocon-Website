@@ -23,6 +23,7 @@ export default function Page() {
             and once again proudly represent India on the international stage.
             Join us on this exciting journey!
           </p>
+          <p className="mt-4 font-normal text-base text-justify text-neutral-300">Social Logos</p>
         </div>
         <div className="w-full md:w-1/2 h-[50vh] md:h-[80vh] flex items-center justify-center">
           <Scene />
