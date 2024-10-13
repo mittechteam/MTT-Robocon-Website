@@ -13,6 +13,8 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@react-three/drei": "^9.114.3",
     "@react-three/fiber": "^8.17.10",
+    "@studio-freight/lenis": "^1.0.42",
+    "@studio-freight/react-lenis": "^0.0.47",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.8",

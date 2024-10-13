@@ -18,7 +18,7 @@ const Carousel: React.FC = () => {
         <h3 className="text-5xl text-center font-semibold text-white mb-4">
           Our <span className="text-[#c73808]">Sponsors</span>
         </h3>
-        <p className="px-10 text-base font-normal text-center text-neutral-300 mb-8">
+        <p className="px-10 text-base font-normal text-center text-gray-400 mb-8">
           our valued sponsors who make our projects and initiatives possible.
           Their support drives innovation and empowers us to create meaningful
           impact. Thank you for being a key part of our journey!

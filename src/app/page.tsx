@@ -1,7 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Carousel from "@/components/logoCarousel/carousel";
-import Footer from "@/components/footer/footer";
 import GradualSpacing from "@/components/ui/gradual-spacing";
 import { Instagram, Linkedin, Twitter, YoutubeIcon } from "lucide-react";
 
@@ -22,7 +21,7 @@ export default function Page() {
           <h1 className="text-4xl md:text-7xl font-bold text-white mb-4">
             <span className="text-[#c73808]">MIT</span> Tech Team
           </h1>
-          <p className="mt-4 font-normal text-base text-justify text-neutral-300">
+          <p className="mt-4 font-normal text-base text-justify text-gray-400">
             At MIT-World Peace University, Pune, India, we are proud
             participants in the prestigious ABU Robocon event each year. With
             over 100 Indian teams competing annually, our team stands out as one
@@ -54,7 +53,6 @@ export default function Page() {
         </div>
       </div>
       <Carousel />
-      <Footer />
     </>
   );
 }
