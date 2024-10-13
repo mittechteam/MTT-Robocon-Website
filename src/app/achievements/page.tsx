@@ -173,13 +173,9 @@ const Schedule = () => {
         accomplishments are a testament to the dedication and support of our
         sponsors, whose guidance has been invaluable.
       </motion.h1>
-      <ScheduleItem title="NG-21" date="Dec 9th" location="Florida" />
-      <ScheduleItem title="Starlink" date="Dec 20th" location="Texas" />
-      <ScheduleItem title="Starlink" date="Jan 13th" location="Florida" />
-      <ScheduleItem title="Turksat 6A" date="Feb 22nd" location="Florida" />
-      <ScheduleItem title="NROL-186" date="Mar 1st" location="California" />
-      <ScheduleItem title="GOES-U" date="Mar 8th" location="California" />
-      <ScheduleItem title="ASTRA 1P" date="Apr 8th" location="Texas" />
+      <ScheduleItem title="National Robocon Champions" date="2020" location="Florida" />
+      <ScheduleItem title="All India Rank 4 at the Nationals" date="2022" location="Texas" />
+      <ScheduleItem title="All India Rank 2 at DD Robocon" date="2023" location="Florida" />
     </section>
   );
 };

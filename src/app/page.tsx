@@ -2,14 +2,15 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Carousel from "@/components/logoCarousel/carousel";
 import GradualSpacing from "@/components/ui/gradual-spacing";
-import { Instagram, Linkedin, Twitter, YoutubeIcon } from "lucide-react";
+import { Instagram, Linkedin, Twitter, YoutubeIcon,Facebook } from "lucide-react";
 
 const Scene = dynamic(() => import("@/components/model/scene"), { ssr: false });
 
 const socialIcons = [
   { Icon: Instagram, url: "https://www.instagram.com/robocon.mit/", hoverColor: "hover:text-pink-500" },
-  { Icon: Linkedin, url: "https://www.linkedin.com/company/mittechteam/", hoverColor: "hover:text-blue-500" },
+  { Icon: Linkedin, url: "https://www.linkedin.com/company/mittechteam/", hoverColor: "hover:text-blue-400" },
   { Icon: Twitter, url: "https://x.com/MITtechTeam", hoverColor: "hover:text-white" },
+  { Icon: Facebook, url: "https://www.facebook.com/MITTechTeam/", hoverColor: "hover:text-blue-800" },
   { Icon: YoutubeIcon, url: "https://www.youtube.com/c/MITRoboconTechTeam", hoverColor: "hover:text-red-500" },
 ];
 
