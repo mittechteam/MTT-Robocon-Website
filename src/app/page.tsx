@@ -49,7 +49,7 @@ export default function Page() {
             ))}
           </div>
         </div>
-        <div className="w-full md:w-1/2 h-[50vh] md:h-[70vh] flex items-center justify-center">
+        <div className="w-full md:w-1/2 h-[40vh] md:h-[60vh] flex items-center justify-center">
           <Scene />
         </div>
       </div>
