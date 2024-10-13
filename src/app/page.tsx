@@ -11,7 +11,7 @@ const socialIcons = [
   { Icon: Linkedin, url: "https://www.linkedin.com/company/mittechteam/", hoverColor: "hover:text-blue-400" },
   { Icon: Twitter, url: "https://x.com/MITtechTeam", hoverColor: "hover:text-white" },
   { Icon: Facebook, url: "https://www.facebook.com/MITTechTeam/", hoverColor: "hover:text-blue-800" },
-  { Icon: YoutubeIcon, url: "https://www.youtube.com/c/MITRoboconTechTeam", hoverColor: "hover:text-red-500" },
+  { Icon: YoutubeIcon, url: "https://www.youtube.com/c/MITRoboconTechTeam", hoverColor: "hover:text-[#ff0000]" },
 ];
 
 export default function Page() {
