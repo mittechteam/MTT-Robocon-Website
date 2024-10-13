@@ -31,7 +31,7 @@ export default function Page() {
             victory and once again proudly represent India on the international
             stage. Join us on this exciting journey!
           </p>
-          <div className="mr-9">
+          <div className="ml-3">
             <GradualSpacing
               className="font-display text-start text-lg font-bold -tracking-widest text-[#c73808] dark:text-white md:text-xl md:leading-[5rem]"
               text="We don't just build Robots, We build people who build robots."
