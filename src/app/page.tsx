@@ -9,6 +9,7 @@ import {
   YoutubeIcon,
   Facebook,
 } from "lucide-react";
+import { HeroVideoDialogDemo } from "@/components/videoHero/heroVideo";
 
 const Scene = dynamic(() => import("@/components/model/scene"), { ssr: false });
 
@@ -79,6 +80,9 @@ export default function Page() {
           <Scene />
         </div>
       </div>
+        <div className="p-10 mb-32 flex items-center justify-center">
+          <HeroVideoDialogDemo />
+        </div>
       <Carousel />
     </>
   );
