@@ -2,16 +2,42 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Carousel from "@/components/logoCarousel/carousel";
 import GradualSpacing from "@/components/ui/gradual-spacing";
-import { Instagram, Linkedin, Twitter, YoutubeIcon,Facebook } from "lucide-react";
+import {
+  Instagram,
+  Linkedin,
+  Twitter,
+  YoutubeIcon,
+  Facebook,
+} from "lucide-react";
 
 const Scene = dynamic(() => import("@/components/model/scene"), { ssr: false });
 
 const socialIcons = [
-  { Icon: Instagram, url: "https://www.instagram.com/robocon.mit/", hoverColor: "hover:text-pink-500" },
-  { Icon: Linkedin, url: "https://www.linkedin.com/company/mittechteam/", hoverColor: "hover:text-blue-500" },
-  { Icon: Twitter, url: "https://x.com/MITtechTeam", hoverColor: "hover:text-white" },
-  { Icon: Facebook, url: "https://www.facebook.com/MITTechTeam/", hoverColor: "hover:text-blue-800" },
-  { Icon: YoutubeIcon, url: "https://www.youtube.com/c/MITRoboconTechTeam", hoverColor: "hover:text-[#ff0000]" },
+  {
+    Icon: Instagram,
+    url: "https://www.instagram.com/robocon.mit/",
+    hoverColor: "hover:text-pink-500",
+  },
+  {
+    Icon: Linkedin,
+    url: "https://www.linkedin.com/company/mittechteam/",
+    hoverColor: "hover:text-blue-500",
+  },
+  {
+    Icon: Twitter,
+    url: "https://x.com/MITtechTeam",
+    hoverColor: "hover:text-white",
+  },
+  {
+    Icon: Facebook,
+    url: "https://www.facebook.com/MITTechTeam/",
+    hoverColor: "hover:text-blue-800",
+  },
+  {
+    Icon: YoutubeIcon,
+    url: "https://www.youtube.com/c/MITRoboconTechTeam",
+    hoverColor: "hover:text-[#ff0000]",
+  },
 ];
 
 export default function Page() {
@@ -24,12 +50,12 @@ export default function Page() {
           </h1>
           <p className="mt-4 font-normal text-base text-justify text-gray-400">
             At MIT-World Peace University, Pune, India, we are proud
-            participants in the prestigious ABU Robocon event each year. With
-            over 100 Indian teams competing annually, our team stands out as one
-            of the top robotics teams in the country. As we set our sights on
-            the DD Robocon 2025, we are more determined than ever to achieve
-            victory and once again proudly represent India on the international
-            stage. Join us on this exciting journey!
+            participants of ABU Robocon. With over 100 Indian teams competing
+            annually, our team stands out as one of the top robotics teams in
+            the country. As we set our sights on the DD Robocon 2025, we are
+            more determined than ever to achieve victory and once again proudly
+            represent India on the international stage. Join us on this exciting
+            journey!
           </p>
           <div className="ml-3">
             <GradualSpacing
@@ -39,9 +65,9 @@ export default function Page() {
           </div>
           <div className="flex gap-x-6">
             {socialIcons.map(({ Icon, url, hoverColor }, index) => (
-              <a 
-                key={index} 
-                href={url} 
+              <a
+                key={index}
+                href={url}
                 className={`text-gray-400 ${hoverColor} transition-colors duration-300`}
               >
                 <Icon size={30} />
