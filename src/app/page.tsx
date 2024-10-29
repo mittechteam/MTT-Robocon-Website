@@ -41,10 +41,17 @@ const socialIcons = [
   },
 ];
 
+const ScrollDown = dynamic(() => import("@/components/ui/scrollDown"), {
+  ssr: false,
+});
+
 export default function Page() {
   return (
     <>
-      <div className="flex items-center justify-between min-h-screen p-10">
+      <div className="flex items-center justify-between min-h-screen p-10 relative">
+        <div className="absolute bottom-28 left-1/2 transform -translate-x-1/2">
+          <ScrollDown />
+        </div>
         <div className="max-w-2xl mb-8 md:mb-0">
           <h1 className="text-4xl md:text-7xl font-bold text-white mb-4">
             <span className="text-[#c73808]">MIT</span> Tech Team
