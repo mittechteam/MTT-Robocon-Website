@@ -26,10 +26,10 @@ const cards = [
     },
   },
   {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
-    src: "/images/A-0.jpg",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "Tech",
+    title: "Aditya Naik",
+    src: "/team/ADITYA_NAIK.jpg",
+    ctaLink: "https://www.linkedin.com/in/aditya-naik-8b1874281/",
     content: () => {
       return (
         <p>
@@ -48,9 +48,9 @@ const cards = [
   },
 
   {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
-    src: "/images/A-0.jpg",
+    description: "Tech",
+    title: "Aishwarya G",
+    src: "/team/Aishwarya G .jpg",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -69,9 +69,9 @@ const cards = [
     },
   },
   {
-    description: "Lord Himesh",
-    title: "Aap Ka Suroor",
-    src: "/images/A-0.jpg",
+    description: "Tech",
+    title: "Amruta P",
+    src: "/team/Amruta P.jpg",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -89,6 +89,406 @@ const cards = [
       );
     },
   },
+  {
+    description: "Tech",
+    title: "Danish T",
+    src: "/team/Danish T.JPG",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Harsh C",
+    src: "/team/Harsh C.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Harshada",
+    src: "/team/Harshada.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Himadri P",
+    src: "/team/Himadri.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Hrishikesh Ghogle",
+    src: "/team/Hrishikesh.jpg",
+    ctaLink: "https://www.linkedin.com/in/hrishikesh-ghogle-1b8602247/",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Jayesh S",
+    src: "/team/Jayesh S.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Om Gunjal",
+    src: "/team/OM_GUNJAL.jpg",
+    ctaLink: "https://www.linkedin.com/in/om-gunjal-77b035255/",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Piyusha Patil",
+    src: "/team/Piyusha Patil.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Rameshwar Patil",
+    src: "/team/Rameshwar Patil.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Rishit D",
+    src: "/team/Rishit D.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Rutu S",
+    src: "/team/Rutu S.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Samyak K",
+    src: "/team/Samyak k .jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Shravani Pachpute",
+    src: "/team/Shravani P.jpg",
+    ctaLink: "https://www.linkedin.com/in/shravani-pachpute-6342492a1/",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Sourabh Bhosale",
+    src: "/team/SOURABH_BHOSALE.jpg",
+    ctaLink: "https://www.linkedin.com/in/sourabh-bhosale-b13ab61a7/",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Sujal Bafna",
+    src: "/team/Sujal B.jpg",
+    ctaLink: "https://www.linkedin.com/in/sujal-bafna-884a8722b/",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Swapnaja",
+    src: "/team/Swapnaja_id.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Vedant Pawar",
+    src: "/team/Vedant Pawar ID.png",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "VIN",
+    src: "/team/VIN_0376.JPG",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Tech",
+    title: "Vishweshwar",
+    src: "/team/Vishweshwar.jpg",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  
 ];
 
 const page = () => {

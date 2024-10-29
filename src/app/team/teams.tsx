@@ -25,7 +25,7 @@ export default function Teams({ cards }: TeamProps) {
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setActive(false);
+        setActive(null);
       }
     }
 
@@ -102,7 +102,10 @@ export default function Teams({ cards }: TeamProps) {
                       {active.title}
                     </motion.h3>
                     <motion.p
-                      layoutId={`description-${active.description}-${id}`}
+                      initial={{ opacity: 1 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 1 }}
+                      layoutId={`description-${active.title}-${id}`}
                       className="text-neutral-400 text-base"
                     >
                       {active.description}
@@ -147,27 +150,33 @@ export default function Teams({ cards }: TeamProps) {
             layoutId={`card-${card.title}-${id}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex flex-col hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
-            <div className="flex gap-4 flex-col  w-full">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
+            <div className="flex gap-4 flex-col w-full">
+              <motion.div 
+                layoutId={`image-${card.title}-${id}`}
+                className="relative"
+              >
                 <Image
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-top"
+                  className="h-60 w-full rounded-lg object-cover object-top"
                 />
               </motion.div>
-              <div className="flex justify-center  items-center flex-col">
+              <div className="flex justify-center items-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-200  text-center md:text-left text-base"
+                  className="font-medium text-neutral-200 text-center md:text-left text-base"
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
-                  layoutId={`description-${card.description}-${id}`}
+                  initial={{ opacity: 1 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 1 }}
+                  layoutId={`description-${card.title}-${id}`}
                   className="text-neutral-400 text-center md:text-left text-base"
                 >
                   {card.description}
