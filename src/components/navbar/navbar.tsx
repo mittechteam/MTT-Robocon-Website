@@ -19,7 +19,7 @@ function Navbar({ className }: { className?: string }) {
         <TransitionLink href="/" label="Home" />
         <TransitionLink href="/team" label="Team" />
         <TransitionLink href="/achievements" label="Achievements" />
-        <TransitionLink href="/alumni" label="Alumni" />
+        <TransitionLink href="/gallery" label="Gallery" />
         <TransitionLink href="/contact" label="Contact" />
       </Menu>
     </div>
