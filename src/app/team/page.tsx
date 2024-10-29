@@ -2,7 +2,7 @@
 import React from "react";
 import Teams from "./teams";
 
-export const cards = [
+const cards = [
   {
     description: "Tech",
     title: "Aditya P",
