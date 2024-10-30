@@ -130,7 +130,7 @@ const cards = [
     },
   },
   {
-    description: "Circuits",
+    description: "Controls",
     title: "Rishit Darwade",
     src: "/team/Rishit D.jpg",
     ctaLink: "http://linkedin.com/in/rishit-darwade-64250229a",
@@ -300,6 +300,27 @@ const cards = [
     },
   },
   {
+    description: "Controls",
+    title: "Avnish Deshmukh",
+    src: "/team/VIN_0376.JPG",
+    ctaLink: "https://www.linkedin.com/in/avnish-deshmukh/",
+    content: () => {
+      return (
+        <p>
+          Himesh Reshammiya, a renowned Indian music composer, singer, and
+          actor, is celebrated for his distinctive voice and innovative
+          compositions. Born in Mumbai, India, he has become a prominent figure
+          in the Bollywood music industry. <br /> <br /> His songs often feature
+          a blend of contemporary and traditional Indian music, capturing the
+          essence of modern Bollywood soundtracks. With a career spanning over
+          two decades, Himesh Reshammiya has released numerous hit albums and
+          singles that have garnered him a massive fan following both in India
+          and abroad.
+        </p>
+      );
+    },
+  },
+  {
     description: "Mech",
     title: "Aaditya Patil",
     src: "/team/Aditya P.jpg",
@@ -452,27 +473,6 @@ const cards = [
     title: "Harshada Gaikwad",
     src: "/team/Harshada.jpg",
     ctaLink: "https://www.linkedin.com/in/harshadavilasraogaikwad/",
-    content: () => {
-      return (
-        <p>
-          Himesh Reshammiya, a renowned Indian music composer, singer, and
-          actor, is celebrated for his distinctive voice and innovative
-          compositions. Born in Mumbai, India, he has become a prominent figure
-          in the Bollywood music industry. <br /> <br /> His songs often feature
-          a blend of contemporary and traditional Indian music, capturing the
-          essence of modern Bollywood soundtracks. With a career spanning over
-          two decades, Himesh Reshammiya has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Tech",
-    title: "VIN",
-    src: "/team/VIN_0376.JPG",
-    ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
