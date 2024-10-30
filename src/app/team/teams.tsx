@@ -177,7 +177,13 @@ export default function Teams({ cards }: TeamProps) {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 1 }}
                   layoutId={`description-${card.title}-${id}`}
-                  className="text-neutral-400 text-center md:text-left text-base"
+                  className={`text-center md:text-left text-base ${
+                    card.description === 'Circuits' ? 'text-red-500' :
+                    card.description === 'Controls' ? 'text-yellow-500' :
+                    card.description === 'Mech' ? 'text-green-500' :
+                    card.description === 'Non-Tech' ? 'text-blue-500' :
+                    'text-neutral-400'
+                  }`}
                 >
                   {card.description}
                 </motion.p>

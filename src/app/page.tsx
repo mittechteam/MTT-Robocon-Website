@@ -67,7 +67,7 @@ export default function Page() {
           </p>
           <div className="ml-3">
             <GradualSpacing
-              className="font-display text-start text-lg font-bold -tracking-widest text-[#c73808] dark:text-white md:text-xl md:leading-[5rem]"
+              className="font-display italic text-start text-lg font-bold -tracking-widest text-[#c73808] dark:text-white md:text-xl md:leading-[5rem]"
               text="We don't just build Robots, We build people who build robots."
             />
           </div>
