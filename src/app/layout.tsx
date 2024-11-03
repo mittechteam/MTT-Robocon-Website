@@ -5,6 +5,7 @@ import Image from "next/image";
 import MTTlogo from "@/assets/logos/MTT-Logo.svg";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
   title: "MIT-WPU Tech Team",
@@ -33,6 +34,7 @@ export default function RootLayout({
           </Link>
           <NavbarDemo />
           {children}
+          <Toaster />
           <Footer />
         </div>
       </body>
