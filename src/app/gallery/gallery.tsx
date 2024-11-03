@@ -59,4 +59,14 @@ const images = [
   "/gallery/51.jpg",
   "/gallery/52.jpg",
   "/gallery/53.jpg",
+  "/gallery/54.jpg",
+  "/gallery/55.jpg",
+  "/gallery/56.jpg",
+  "/gallery/57.jpg",
+  "/gallery/58.jpg",
+  "/gallery/60.jpg",
+  "/gallery/61.jpg",
+  "/gallery/62.jpg",
+  "/gallery/63.jpg",
+
 ];
