@@ -79,7 +79,7 @@ export default function Teams({ cards }: TeamProps) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-neutral-800  dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-fit flex flex-col bg-neutral-800  sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <Image
@@ -153,7 +153,7 @@ export default function Teams({ cards }: TeamProps) {
             className="p-4 flex flex-col hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col w-full">
-              <motion.div 
+              <motion.div
                 layoutId={`image-${card.title}-${id}`}
                 className="relative"
               >
@@ -178,11 +178,19 @@ export default function Teams({ cards }: TeamProps) {
                   exit={{ opacity: 1 }}
                   layoutId={`description-${card.title}-${id}`}
                   className={`text-center md:text-left text-base ${
-                    card.description === 'Circuits' ? 'text-red-500' :
-                    card.description === 'Controls' ? 'text-yellow-500' :
-                    card.description === 'Mech' ? 'text-green-500' :
-                    card.description === 'Non-Tech' ? 'text-blue-500' :
-                    'text-neutral-400'
+                    card.description === "Captain🧑‍✈️ - Controls"
+                      ? "text-purple-500"
+                      : card.description === "Vice-Captain👨‍✈️ - Circuits"
+                      ? "text-purple-500"
+                      : card.description === "Circuits"
+                      ? "text-red-500"
+                      : card.description === "Controls"
+                      ? "text-yellow-500"
+                      : card.description === "Mech"
+                      ? "text-green-500"
+                      : card.description === "Non-Tech"
+                      ? "text-blue-500"
+                      : "text-neutral-400"
                   }`}
                 >
                   {card.description}
