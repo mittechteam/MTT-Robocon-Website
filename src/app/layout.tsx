@@ -5,6 +5,7 @@ import { NavbarDemo } from "@/components/navbar/navbar";
 import Image from "next/image";
 import MTTlogo from "@/assets/logos/MTT-Logo.svg";
 import Footer from "@/components/footer/footer";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,9 +40,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="min-h-screen relative bg-black dark:bg-white bg-dot-white/[0.2] dark:bg-dot-white/[0.2] overflow-hidden">
-          <div className="absolute top-4 left-10 z-40">
-            <Image src={MTTlogo} alt="MTT-Logo" width={75} height={75} />
-          </div>
+          <Link href="/">
+            <div className="absolute top-4 left-10 z-50 cursor-pointer">
+              <Image src={MTTlogo} alt="MTT-Logo" width={75} height={75} />
+            </div>
+          </Link>
           <NavbarDemo />
           {children}
           <Footer />

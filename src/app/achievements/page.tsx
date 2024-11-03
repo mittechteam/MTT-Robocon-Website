@@ -49,7 +49,7 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-8">
-          First runner-up in Indian National Robocon
+            First runner-up in Indian National Robocon
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -89,7 +89,8 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          IHSC Award and Helping Hand Award at Indian National Robocon (IIT Delhi)
+            IHSC Award and Helping Hand Award at Indian National Robocon (IIT
+            Delhi)
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -129,13 +130,54 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Winner of Indian National Robocon
+            Winner of Indian National Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Represented India at International ABU Robocon
+            Represented India at International ABU Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Prof. Balakrishna Memorial Award
+            Prof. Balakrishna Memorial Award
+          </p>
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="/images/A-1.JPG"
+              alt="hero template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <Image
+              src="/images/A-1.JPG"
+              alt="feature template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <Image
+              src="/images/A-1.JPG"
+              alt="bento template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <Image
+              src="/images/A-1.JPG"
+              alt="cards template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2019",
+      content: (
+        <div>
+          <p className="text-white text-xs md:text-sm font-normal mb-4">
+            We achieved AIR 2 in SAVe Student Autonomous Underwater Vehicle
+            challenge, Indian Institute of Ocean Technology
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -175,7 +217,7 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Finalist and first runner-up in Indin National Robocon (Pune)
+            Finalist and first runner-up in Indin National Robocon (Pune)
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -215,17 +257,17 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          First runner-up at Indian National Robocon (Pune)
+            First runner-up at Indian National Robocon (Pune)
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Represented India at International ABU Robocon
+            Represented India at International ABU Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Best aesthetic award
+            Best aesthetic award
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          2nd runner-up in Mathworks Modelling awards
-          </p>        
+            2nd runner-up in Mathworks Modelling awards
+          </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
               src="/images/A-1.JPG"
@@ -264,13 +306,13 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          National Rank 4 in Indian National Robocon (Pune)
+            National Rank 4 in Indian National Robocon (Pune)
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Best Idea award
+            Best Idea award
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Fastest Pole climbing robot
+            Fastest Pole climbing robot
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -310,7 +352,7 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Second Runner-up in Indian National Robocon (Pune)
+            Second Runner-up in Indian National Robocon (Pune)
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -350,16 +392,16 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Winner of Indian National Robocon (Pune)
+            Winner of Indian National Robocon (Pune)
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Represented India at International ABU Robocon
+            Represented India at International ABU Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Highest aggregate score in ABU Robocon (Vietnam)
+            Highest aggregate score in ABU Robocon (Vietnam)
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Prof. Balakrishna Memorial Award
+            Prof. Balakrishna Memorial Award
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -399,19 +441,19 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Winner of Indian National Robocon (Pune) 
+            Winner of Indian National Robocon (Pune)
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Represented India at International ABU Robocon
+            Represented India at International ABU Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Award for securing 5th rank at international ABU Robocon
+            Award for securing 5th rank at international ABU Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Fastest job completion robot
+            Fastest job completion robot
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Prof. Balakrishna Memorial Award
+            Prof. Balakrishna Memorial Award
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -451,7 +493,7 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Indian Semi-finalist (Pune)
+            Indian Semi-finalist (Pune)
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -491,16 +533,16 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Winner of Indian National Robocon
+            Winner of Indian National Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Represented India at International ABU Robocon
+            Represented India at International ABU Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Best Innovation award 
+            Best Innovation award
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Prof. Balakrishna Memorial award
+            Prof. Balakrishna Memorial award
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -540,13 +582,13 @@ export default function Achievements() {
       content: (
         <div>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Runner-up in Indian National Robocon (India)
+            Runner-up in Indian National Robocon (India)
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Represented India at International ABU Robocon
+            Represented India at International ABU Robocon
           </p>
           <p className="text-white text-xs md:text-sm font-normal mb-4">
-          Misumi Sponsors Award
+            Misumi Sponsors Award
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
