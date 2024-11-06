@@ -190,6 +190,8 @@ export default function Teams({ cards }: TeamProps) {
                       ? "text-green-500"
                       : card.description === "Non-Tech"
                       ? "text-blue-500"
+                      : card.description === "Faculty Mentor👨🏻‍🏫"
+                      ? "text-purple-500"
                       : "text-neutral-400"
                   }`}
                 >

@@ -4,6 +4,26 @@ import Teams from "./teams";
 
 const cards = [
   {
+    description: "Faculty Mentor👨🏻‍🏫",
+    title: "Prof Dr Saket Yeolekar",
+    src: "/team/SRY.jpg",
+    ctaLink:
+      "https://www.linkedin.com/in/dr-saket-yeolekar-8137791b1/",
+    content: () => {
+      return (
+        <p>
+          Prof. Dr. Saket Yeolekar is an esteemed faculty mentor, bringing years
+          of expertise to guide and inspire students. Known for his insightful
+          research contributions and dedication to academic excellence, Dr.
+          Yeolekar fosters a learning environment that encourages innovation and
+          critical thinking. His mentorship empowers students to explore
+          cutting-edge technologies and develop practical skills essential for
+          success in the field.
+        </p>
+      );
+    },
+  },
+  {
     description: "Captain🧑‍✈️ - Controls",
     title: "Harsh Chourasia",
     src: "/team/Harsh C.jpg",
@@ -19,6 +39,24 @@ const cards = [
           demonstrating expertise in ROS2, real-time navigation, and control
           interfaces. He also serves as the project and timeline manager for the
           team.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Vice-Captain👨‍✈️ - Circuits",
+    title: "Om Gunjal",
+    src: "/team/OM_GUNJAL.jpg",
+    ctaLink: "https://www.linkedin.com/in/om-gunjal-77b035255/",
+    content: () => {
+      return (
+        <p>
+          Om Gunjal serves as the Vice Captain of his team, focusing on embedded
+          systems and circuit design in the circuits department. In addition to
+          his technical role, he manages the team’s finances and oversees
+          non-technical operations, fostering collaboration among team members.
+          His contributions play a vital role in ensuring the team remains on
+          track to achieve its goals.
         </p>
       );
     },
@@ -163,24 +201,6 @@ const cards = [
         <p>
           A robotics enthusiast passionate about electronics, coding, and
           mechanical design. know more about him at avnish2105.github.io.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Vice-Captain👨‍✈️ - Circuits",
-    title: "Om Gunjal",
-    src: "/team/OM_GUNJAL.jpg",
-    ctaLink: "https://www.linkedin.com/in/om-gunjal-77b035255/",
-    content: () => {
-      return (
-        <p>
-          Om Gunjal serves as the Vice Captain of his team, focusing on embedded
-          systems and circuit design in the circuits department. In addition to
-          his technical role, he manages the team’s finances and oversees
-          non-technical operations, fostering collaboration among team members.
-          His contributions play a vital role in ensuring the team remains on
-          track to achieve its goals.
         </p>
       );
     },
