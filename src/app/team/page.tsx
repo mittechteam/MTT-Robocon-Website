@@ -7,8 +7,7 @@ const cards = [
     description: "Faculty Mentor👨🏻‍🏫",
     title: "Prof Dr Saket Yeolekar",
     src: "/team/SRY.jpg",
-    ctaLink:
-      "https://www.linkedin.com/in/dr-saket-yeolekar-8137791b1/",
+    ctaLink: "https://www.linkedin.com/in/dr-saket-yeolekar-8137791b1/",
     content: () => {
       return (
         <p>
