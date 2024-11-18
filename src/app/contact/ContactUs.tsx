@@ -3,29 +3,23 @@
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Headphones } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@/components/ui/select";
 
 export default function ContactForm() {
-  const [interest, setInterest] = useState("");
+  const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    setLoading(true);
 
     const target = e.target as HTMLFormElement;
     const name = (target.elements.namedItem("name") as HTMLInputElement).value;
     const email = (target.elements.namedItem("email") as HTMLInputElement).value;
-    const prn = (target.elements.namedItem("prn") as HTMLInputElement).value;
-    const branch = (target.elements.namedItem("branch") as HTMLInputElement).value;
-    const message = (target.elements.namedItem("message") as HTMLInputElement).value;
+    const phone = (target.elements.namedItem("phone") as HTMLInputElement).value;
+    const message = (target.elements.namedItem("message") as HTMLTextAreaElement).value;
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -38,9 +32,7 @@ export default function ContactForm() {
           access_key: process.env.NEXT_PUBLIC_ACCESS_KEY,
           name,
           email,
-          prn,
-          branch,
-          interest,
+          phone,
           message,
         }),
       });
@@ -55,7 +47,6 @@ export default function ContactForm() {
           variant: "default",
         });
         target.reset(); // Reset the form
-        setInterest(""); // Reset the interest state
       } else {
         console.error("Form submission failed:", result);
         toast({
@@ -71,6 +62,8 @@ export default function ContactForm() {
         description: "An unexpected error occurred. Please try again later.",
         variant: "destructive",
       });
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -115,42 +108,23 @@ export default function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="prn" className="block text-sm font-medium mb-2">
-              PRN
+            <label htmlFor="phone" className="block text-sm font-medium mb-2">
+              Phone Number
             </label>
-            <Input id="prn" name="prn" placeholder="Your PRN" className="text-black" required />
-          </div>
-          <div>
-            <label htmlFor="branch" className="block text-sm font-medium mb-2">
-              Branch
-            </label>
-            <Input id="branch" name="branch" placeholder="Your Branch" className="text-black" required />
-          </div>
-          <div>
-            <label htmlFor="requirement" className="block text-sm font-medium mb-2">
-              Select your Interest
-            </label>
-            <Select
-              onValueChange={(value) => setInterest(value)}
+            <Input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="Your Phone Number"
+              className="text-black"
               required
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="What do you need help with?" />
-              </SelectTrigger>
-              <SelectContent className="text-black">
-                <SelectItem value="control">Control</SelectItem>
-                <SelectItem value="circuits">Circuits</SelectItem>
-                <SelectItem value="dynamics">Dynamics</SelectItem>
-                <SelectItem value="non-tech">Non-Tech</SelectItem>
-                <SelectItem value="other">Other</SelectItem>
-              </SelectContent>
-            </Select>
+            />
           </div>
           <div>
             <label htmlFor="message" className="block text-sm font-medium mb-2">
               Message
             </label>
-            <Input
+            <Textarea
               id="message"
               name="message"
               placeholder="Your message here..."
@@ -158,8 +132,8 @@ export default function ContactForm() {
               required
             />
           </div>
-          <Button type="submit" className="w-full bg-red-700 hover:bg-red-500">
-            Send Message
+          <Button type="submit" className="w-full bg-red-700 hover:bg-red-500" disabled={loading}>
+            {loading ? "Sending..." : "Send Message"}
           </Button>
         </form>
       </div>
