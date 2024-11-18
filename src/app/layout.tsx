@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { NavbarDemo } from "@/components/navbar/navbar";
+import NavigationWrapper from "@/components/navbar/navigation-wraper";
 import Image from "next/image";
 import MTTlogo from "@/assets/logos/MTT-Logo.svg";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "MIT-WPU Tech Team",
@@ -32,7 +32,7 @@ export default function RootLayout({
               <Image src={MTTlogo} alt="MTT-Logo" width={75} height={75} />
             </div>
           </Link>
-          <NavbarDemo />
+          <NavigationWrapper />
           {children}
           <Toaster />
           <Footer />
