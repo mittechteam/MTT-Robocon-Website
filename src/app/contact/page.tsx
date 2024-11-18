@@ -22,8 +22,7 @@ export default function Page() {
               <div>
                 <p>MTT Robocon Lab</p>
                 <p>
-                  9, Vishwashanti Marg, Shilpa Housing Society, Rambaug Colony,
-                  Kothrud, Pune, Maharashtra 411038
+                Mahaveer Bldg, MIT WPU Campus, Kothrud, Pune, Maharashtra, Pin-411038
                 </p>
               </div>
             </button>
@@ -45,6 +44,7 @@ export default function Page() {
                 href="mailto:robocon.mit@gmail.com"
                 className="text-white hover:text-blue-300"
               >
+                <p>Drop a Mail</p>
                 <p>robocon.mit@gmail.com</p>
               </a>
             </button>
