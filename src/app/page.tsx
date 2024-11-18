@@ -48,7 +48,7 @@ const ScrollDown = dynamic(() => import("@/components/ui/scrollDown"), {
 export default function Page() {
   return (
     <>
-      <div className="flex items-center justify-between min-h-screen p-10 relative">
+      <div className="flex items-center justify-between min-h-screen p-10 relative overflow-hidden">
         <div className="absolute bottom-28 left-1/2 transform -translate-x-1/2">
           <ScrollDown />
         </div>
@@ -68,7 +68,7 @@ export default function Page() {
           <div className="ml-3">
             <GradualSpacing
               className="font-display italic text-start text-lg font-bold -tracking-widest text-[#c73808] dark:text-white md:text-xl md:leading-[5rem]"
-              text="We don't just build Robots, We build people who build robots."
+              text="We don't just build Robots, We build people who build robots"
             />
           </div>
           <div className="flex gap-x-6">

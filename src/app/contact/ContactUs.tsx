@@ -1,151 +1,165 @@
-"use client";
-import { useState } from "react";
-import { MessageCircle, Phone, MapPin } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+'use client'
+
+import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { Headphones } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 
-
-export default function ContactUs() {
+export default function ContactForm() {
+  const [interest, setInterest] = useState("");
   const { toast } = useToast();
-  const [loading, setLoading] = useState(false);
 
-  async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setLoading(true);
+  async function handleSubmit(e: FormEvent) {
+    e.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const data = {
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
+    const target = e.target as HTMLFormElement;
+    const name = (target.elements.namedItem("name") as HTMLInputElement).value;
+    const email = (target.elements.namedItem("email") as HTMLInputElement).value;
+    const prn = (target.elements.namedItem("prn") as HTMLInputElement).value;
+    const branch = (target.elements.namedItem("branch") as HTMLInputElement).value;
+    const message = (target.elements.namedItem("message") as HTMLInputElement).value;
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e396d3e1-0ee9-45fa-b41d-f71db4b8af21",
+          name,
+          email,
+          prn,
+          branch,
+          interest,
+          message,
+        }),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to send message");
+      const result = await response.json();
+
+      if (result.success) {
+        console.log("Form submitted successfully:", result);
+        toast({
+          title: "Success",
+          description: "Your message has been sent successfully.",
+          variant: "default",
+        });
+        target.reset(); // Reset the form
+        setInterest(""); // Reset the interest state
+      } else {
+        console.error("Form submission failed:", result);
+        toast({
+          title: "Error",
+          description: "Failed to send your message. Please try again.",
+          variant: "destructive",
+        });
       }
-
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you within 24 hours.",
-      });
-      event.currentTarget.reset();
     } catch (error) {
-      console.log(error);
+      console.error("Error during form submission:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: "An unexpected error occurred. Please try again later.",
         variant: "destructive",
       });
-    } finally {
-      setLoading(false);
     }
   }
 
   return (
-    <div className="container flex mx-auto px-4 py-12 ">
-      <div className="max-w-2xl mx-auto grid md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
-        <Card className="bg-transparent">
-          <CardContent className="p-6">
-            <MessageCircle className="w-10 h-10 text-primary mb-4 text-white" />
-            <h2 className="font-semibold mb-2 text-white">Chat to sales</h2>
-            <p className="text-sm text-muted-foreground mb-4 text-white">
-              Speak to our friendly team.
-            </p>
-            <Button variant="outline" size="sm" className="bg-red-500 hover:bg-red-800 border-none text-white">
-              Chat to sales
-            </Button>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-transparent">
-          <CardContent className="p-6">
-            <MessageCircle className="w-10 h-10 text-primary mb-4 text-white" />
-            <h2 className="font-semibold mb-2 text-white">Chat to support</h2>
-            <p className="text-sm text-muted-foreground mb-4 text-white">
-              We&apos;re here to help.
-            </p>
-            <Button variant="outline" size="sm" className="bg-red-500 hover:bg-red-800 border-none text-white">
-              Chat to support
-            </Button>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-transparent">
-          <CardContent className="p-6">
-            <MapPin className="w-10 h-10 text-primary mb-4 text-white" />
-            <h2 className="font-semibold mb-2 text-white">Visit us</h2>
-            <p className="text-sm text-muted-foreground mb-4 text-white">
-              Visit our office HQ.
-            </p>
-            <Button variant="outline" size="sm" className="bg-red-500 hover:bg-red-800 border-none text-white">
-              Get directions
-            </Button>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-transparent">
-          <CardContent className="p-6">
-            <Phone className="w-10 h-10 text-primary mb-4 text-white" />
-            <h2 className="font-semibold mb-2 text-white">Call us</h2>
-            <p className="text-sm text-muted-foreground mb-4 text-white">
-              Mon-Fri from 8am to 5pm.
-            </p>
-            <Button variant="outline" size="sm" className="bg-red-500 hover:bg-red-800 border-none text-white">
-              Call our team
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-2 text-white">Message us</h2>
-          <p className="text-muted-foreground text-white">
-            We&apos;ll get back to you within 24 hours.
+    <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto px-4 py-12 text-white">
+      <div className="space-y-16">
+        <div>
+          <h2 className="text-4xl font-bold tracking-tight">Message Us</h2>
+          <p className="text-lg text-muted-foreground mt-2">
+            Our dedicated team is always available to answer your questions and assist with your needs.
           </p>
         </div>
-
-        <form onSubmit={onSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="space-y-2 text-white">
-              <Label htmlFor="firstName">First name</Label>
-              <Input id="firstName" name="firstName" className="text-black" required />
-            </div>
-            <div className="space-y-2 text-white">
-              <Label htmlFor="lastName">Last name</Label>
-              <Input id="lastName" name="lastName" className="text-black" required />
-            </div>
+        <div className="flex items-start space-x-6">
+          <Headphones className="w-12 h-12 text-red-500" />
+          <div>
+            <h3 className="text-xl font-semibold">Support</h3>
+            <p className="text-muted-foreground">
+              Our team is here to assist you with any inquiries or issues.
+            </p>
           </div>
-
-          <div className="space-y-2 text-white">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" name="email" type="email" className="text-black" required />
+        </div>
+      </div>
+      <div className="space-y-8">
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium mb-2">
+              Full Name
+            </label>
+            <Input id="name" name="name" placeholder="First Last" className="text-black" required />
           </div>
-
-          <div className="space-y-2 text-white">
-            <Label htmlFor="message">Message</Label>
-            <Textarea
-              id="message"
-              name="message"
-              placeholder="Leave us a message..."
-              className="min-h-[100px] text-black"
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium mb-2">
+              Email
+            </label>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="example@company.com"
+              className="text-black"
               required
             />
           </div>
-
-          <Button type="submit" className="w-full bg-red-500 hover:bg-red-800" disabled={loading}>
-            {loading ? "Sending..." : "Send message"}
+          <div>
+            <label htmlFor="prn" className="block text-sm font-medium mb-2">
+              PRN
+            </label>
+            <Input id="prn" name="prn" placeholder="Your PRN" className="text-black" required />
+          </div>
+          <div>
+            <label htmlFor="branch" className="block text-sm font-medium mb-2">
+              Branch
+            </label>
+            <Input id="branch" name="branch" placeholder="Your Branch" className="text-black" required />
+          </div>
+          <div>
+            <label htmlFor="requirement" className="block text-sm font-medium mb-2">
+              Select your Interest
+            </label>
+            <Select
+              onValueChange={(value) => setInterest(value)}
+              required
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="What do you need help with?" />
+              </SelectTrigger>
+              <SelectContent className="text-black">
+                <SelectItem value="control">Control</SelectItem>
+                <SelectItem value="circuits">Circuits</SelectItem>
+                <SelectItem value="dynamics">Dynamics</SelectItem>
+                <SelectItem value="non-tech">Non-Tech</SelectItem>
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium mb-2">
+              Message
+            </label>
+            <Input
+              id="message"
+              name="message"
+              placeholder="Your message here..."
+              className="text-black"
+              required
+            />
+          </div>
+          <Button type="submit" className="w-full bg-red-700 hover:bg-red-500">
+            Send Message
           </Button>
         </form>
       </div>
