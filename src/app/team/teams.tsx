@@ -1,9 +1,10 @@
 "use client";
+
 import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-import { LinkedinIcon } from "lucide-react";
+import { LinkedinIcon } from 'lucide-react';
 
 interface TeamProps {
   cards: Array<{
@@ -16,9 +17,7 @@ interface TeamProps {
 }
 
 export default function Teams({ cards }: TeamProps) {
-  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
-    null
-  );
+  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -41,6 +40,15 @@ export default function Teams({ cards }: TeamProps) {
 
   useOutsideClick(ref, () => setActive(null));
 
+  // Sort cards by role
+  const facultyMentor = cards.find(card => card.description.includes("Faculty Mentor"));
+  const captain = cards.find(card => card.description.includes("Captain") && !card.description.includes("Vice"));
+  const viceCaptain = cards.find(card => card.description.includes("Vice-Captain"));
+  const otherMembers = cards.filter(card => 
+    !card.description.includes("Faculty Mentor") && 
+    !card.description.includes("Captain")
+  );
+
   return (
     <>
       <AnimatePresence>
@@ -55,21 +63,15 @@ export default function Teams({ cards }: TeamProps) {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{
                 opacity: 0,
-                transition: {
-                  duration: 0.05,
-                },
+                transition: { duration: 0.05 },
               }}
               className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-neutral-800 rounded-full h-6 w-6"
               onClick={() => setActive(null)}
@@ -79,22 +81,23 @@ export default function Teams({ cards }: TeamProps) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit flex flex-col bg-neutral-800  sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-fit flex flex-col bg-neutral-800 sm:rounded-3xl overflow-hidden"
             >
-              <motion.div layoutId={`image-${active.title}-${id}`}>
+              <motion.div layoutId={`image-${active.title}-${id}`} className="relative h-96">
                 <Image
                   priority
-                  width={200}
-                  height={200}
+                  fill
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-96 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  className="sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  quality={95}
+                  sizes="(max-width: 768px) 100vw, 500px"
                 />
               </motion.div>
 
               <div>
                 <div className="flex justify-between items-start p-4">
-                  <div className="">
+                  <div>
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
                       className="font-medium text-neutral-200 text-base"
@@ -102,9 +105,6 @@ export default function Teams({ cards }: TeamProps) {
                       {active.title}
                     </motion.h3>
                     <motion.p
-                      initial={{ opacity: 1 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 1 }}
                       layoutId={`description-${active.title}-${id}`}
                       className="text-neutral-400 text-base"
                     >
@@ -132,11 +132,9 @@ export default function Teams({ cards }: TeamProps) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-400 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-400 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)]"
                   >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
+                    {typeof active.content === "function" ? active.content() : active.content}
                   </motion.div>
                 </div>
               </div>
@@ -144,82 +142,133 @@ export default function Teams({ cards }: TeamProps) {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 items-start gap-4">
-        {cards.map((card) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col hover:bg-neutral-800 rounded-xl cursor-pointer"
-          >
-            <div className="flex gap-4 flex-col w-full">
-              <motion.div
-                layoutId={`image-${card.title}-${id}`}
-                className="relative"
-              >
-                <Image
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-60 w-full rounded-lg object-cover object-top"
-                />
-              </motion.div>
-              <div className="flex justify-center items-center flex-col">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-200 text-center md:text-left text-base"
+
+      <div className="max-w-5xl mx-auto w-full space-y-8">
+        {/* Faculty Mentor Row */}
+        {facultyMentor && (
+          <div className="flex justify-center">
+            <motion.div
+              layoutId={`card-${facultyMentor.title}-${id}`}
+              onClick={() => setActive(facultyMentor)}
+              className="p-4 w-full max-w-sm flex flex-col hover:bg-neutral-800 rounded-xl cursor-pointer"
+            >
+              <div className="flex gap-4 flex-col w-full">
+                <motion.div
+                  layoutId={`image-${facultyMentor.title}-${id}`}
+                  className="relative aspect-square"
                 >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  initial={{ opacity: 1 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 1 }}
-                  layoutId={`description-${card.title}-${id}`}
-                  className={`text-center md:text-left text-base ${
-                    card.description === "Captain🧑‍✈️ - Controls"
-                      ? "text-purple-500"
-                      : card.description === "Vice-Captain👨‍✈️ - Circuits"
-                      ? "text-purple-500"
-                      : card.description === "Circuits"
-                      ? "text-red-500"
-                      : card.description === "Controls"
-                      ? "text-yellow-500"
-                      : card.description === "Mech"
-                      ? "text-green-500"
-                      : card.description === "Non-Tech"
-                      ? "text-blue-500"
-                      : card.description === "Faculty Mentor👨🏻‍🏫"
-                      ? "text-purple-500"
-                      : "text-neutral-400"
-                  }`}
-                >
-                  {card.description}
-                </motion.p>
+                  <Image
+                    fill
+                    src={facultyMentor.src}
+                    alt={facultyMentor.title}
+                    className="rounded-lg object-cover object-top"
+                    quality={90}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </motion.div>
+                <div className="flex justify-center items-center flex-col">
+                  <motion.h3
+                    layoutId={`title-${facultyMentor.title}-${id}`}
+                    className="font-medium text-neutral-200 text-center text-base"
+                  >
+                    {facultyMentor.title}
+                  </motion.h3>
+                  <motion.p
+                    layoutId={`description-${facultyMentor.title}-${id}`}
+                    className="text-center text-base text-purple-500"
+                  >
+                    {facultyMentor.description}
+                  </motion.p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
-      </ul>
+            </motion.div>
+          </div>
+        )}
+
+        {/* Captain and Vice-Captain Row */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {captain && (
+            <TeamCard card={captain} id={id} setActive={setActive} />
+          )}
+          {viceCaptain && (
+            <TeamCard card={viceCaptain} id={id} setActive={setActive} />
+          )}
+        </div>
+
+        {/* Other Members Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {otherMembers.map((card) => (
+            <TeamCard key={card.title} card={card} id={id} setActive={setActive} />
+          ))}
+        </div>
+      </div>
     </>
   );
 }
 
-export const CloseIcon = () => {
+function TeamCard({ 
+  card, 
+  id, 
+  setActive 
+}: { 
+  card: TeamProps['cards'][number], 
+  id: string, 
+  setActive: (card: TeamProps['cards'][number]) => void 
+}) {
+  return (
+    <motion.div
+      layoutId={`card-${card.title}-${id}`}
+      onClick={() => setActive(card)}
+      className="p-4 w-full flex flex-col hover:bg-neutral-800 rounded-xl cursor-pointer"
+    >
+      <div className="flex gap-4 flex-col w-full">
+        <motion.div
+          layoutId={`image-${card.title}-${id}`}
+          className="relative aspect-square"
+        >
+          <Image
+            fill
+            src={card.src}
+            alt={card.title}
+            className="rounded-lg object-cover object-top"
+            quality={90}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </motion.div>
+        <div className="flex justify-center items-center flex-col">
+          <motion.h3
+            layoutId={`title-${card.title}-${id}`}
+            className="font-medium text-neutral-200 text-center text-base"
+          >
+            {card.title}
+          </motion.h3>
+          <motion.p
+            layoutId={`description-${card.title}-${id}`}
+            className={`text-center text-base ${
+              card.description.includes("Captain") ? "text-purple-500" :
+              card.description.includes("Circuits") ? "text-red-500" :
+              card.description.includes("Controls") ? "text-yellow-500" :
+              card.description.includes("Mech") ? "text-green-500" :
+              card.description.includes("Non-Tech") ? "text-blue-500" :
+              "text-neutral-400"
+            }`}
+          >
+            {card.description}
+          </motion.p>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+const CloseIcon = () => {
   return (
     <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{
         opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
+        transition: { duration: 0.05 },
       }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
