@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MIT Tech Team Website  
 
-## Getting Started
+Welcome to the official repository of the **MIT Tech Team** website! This platform is built to showcase the vision, projects, and achievements of MITWPU's robotics club, fostering innovation and collaboration in robotics and technology.  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Features  
+- **Homepage**: Highlights the club's mission, vision, and core values.  
+- **Team Page**: Meet the brilliant minds behind the club.  
+- **Achievements Page**: Celebrates the club's milestones and accolades.  
+- **Gallery**: A visual showcase of events, projects, and memorable moments.  
+- **Contact Us Page**: Connect with the team for inquiries or collaboration opportunities.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Tech Stack  
+- **Framework**: Next.js  
+- **Language**: JavaScript (React)  
+- **Styling**: Tailwind CSS 
+- **Hosting**: Vercel, College Domain(mitwpu.edu) 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 💻 How to Run Locally  
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone this repository:  
+   ```bash  
+   git clone https://github.com/yourusername/mit-tech-team-website.git  
+   ```  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Navigate to the project directory:  
+   ```bash  
+   cd mit-tech-team-website  
+   ```  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Install dependencies:  
+   ```bash  
+   npm install  
+   ```  
 
-## Deploy on Vercel
+4. Start the development server:  
+   ```bash  
+   npm run dev  
+   ```  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📂 Folder Structure  
+```plaintext  
+MIT-Tech-Team-Website/  
+├── public/               # Static assets (images, icons, etc.)  
+├── src/  
+│   ├── pages/            # Next.js pages (home, team, achievements, gallery, contact)  
+│   ├── components/       # Reusable components  
+│   ├── styles/           # Global and component-specific styles  
+├── .gitignore  
+├── package.json  
+├── README.md  
+```  
+
+---
+
+## 🏆 Contributions  
+Contributions are welcome! Feel free to fork the repo, make improvements, and submit a pull request.  
+
+---
+
+## 📬 Contact  
+For queries or feedback, reach out to **MIT Tech Team** at [robocon.mit@gmail.com](mailto:robocon.mit@gmail.com).  
+
+---
+
+**Developed with ❤️ by [Mehul Uttam](https://github.com/tallman1O)**  
