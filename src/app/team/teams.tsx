@@ -57,7 +57,7 @@ export default function Teams({ cards }: TeamProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+            className="fixed inset-0 bg-black/20 h-full w-full z-10 backdrop-blur-sm"
           />
         )}
       </AnimatePresence>
@@ -81,7 +81,7 @@ export default function Teams({ cards }: TeamProps) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit flex flex-col bg-neutral-800 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[90%] sm:max-w-[500px] h-fit md:h-fit flex flex-col bg-neutral-800 rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`image-${active.title}-${id}`} className="relative h-96">
                 <Image
@@ -132,7 +132,7 @@ export default function Teams({ cards }: TeamProps) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-400 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)]"
+                    className="text-neutral-400 text-xs md:text-sm lg:text-base  md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)]"
                   >
                     {typeof active.content === "function" ? active.content() : active.content}
                   </motion.div>
@@ -279,7 +279,7 @@ const CloseIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-4 w-4 text-black"
+      className="h-4 w-4 bg-black text-red-500 z-50"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M18 6l-12 12" />

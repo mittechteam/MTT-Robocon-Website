@@ -10,24 +10,26 @@ export default function AnimatedMobileNav() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="fixed inset-0 overflow-hidden z-50">
+    <div className="relative z-50">
+      {/* Menu overlay */}
       <div
-        className={`absolute inset-0 bg-red-500 text-white p-6 flex flex-col transform transition-all duration-500 ease-in-out ${
-          isOpen
-            ? "opacity-100 scale-100"
-            : "opacity-0 scale-0 origin-top-right"
-        }`}
+        className={`fixed inset-0 bg-red-500 text-white p-6 flex flex-col transform transition-all duration-500 ease-in-out 
+          ${
+            isOpen
+              ? "opacity-100 scale-100 pointer-events-auto"
+              : "opacity-0 scale-0 origin-top-right pointer-events-none"
+          }`}
       >
         <div className="flex justify-between items-start">
           <button
-            className="text-white"
+            className="text-white ml-auto"
             aria-label="Close menu"
             onClick={toggleMenu}
           >
             <X className="w-8 h-8" />
           </button>
         </div>
-        <nav className="flex-grow flex flex-col justify-center space-y-4 text-6xl font-bold">
+        <nav className="flex-grow flex flex-col justify-center space-y-4 text-4xl font-bold">
           <Link
             className="opacity-70 hover:opacity-100 transition-opacity"
             href="/"
@@ -37,10 +39,10 @@ export default function AnimatedMobileNav() {
           </Link>
           <Link
             className="opacity-70 hover:opacity-100 transition-opacity"
-            href="/about"
+            href="/team"
             onClick={() => setIsOpen(false)}
           >
-            about.
+            team.
           </Link>
           <Link
             className="opacity-70 hover:opacity-100 transition-opacity"
@@ -51,10 +53,10 @@ export default function AnimatedMobileNav() {
           </Link>
           <Link
             className="opacity-70 hover:opacity-100 transition-opacity"
-            href="/team"
+            href="/gallery"
             onClick={() => setIsOpen(false)}
           >
-            team.
+            gallery.
           </Link>
         </nav>
         <div className="flex justify-between items-end">
@@ -153,8 +155,10 @@ export default function AnimatedMobileNav() {
           </Link>
         </div>
       </div>
+
+      {/* Hamburger menu button */}
       <button
-        className={`fixed top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 transition-all duration-500 ease-in-out ${
+        className={`fixed top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full border-2 border-red-500 bg-white text-red-500 transition-all duration-500 ease-in-out z-50 ${
           isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"
         }`}
         aria-label="Open menu"
