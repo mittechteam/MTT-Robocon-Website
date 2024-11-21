@@ -15,7 +15,7 @@ const Carousel: React.FC = () => {
   return (
     <div className="min-w-full pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="text-5xl text-center font-semibold text-white mb-4">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-center font-semibold text-white mb-4">
           Our <span className="text-[#c73808]">Sponsors</span>
         </h3>
         <p className="px-10 text-base font-normal text-center text-gray-400 mb-8">

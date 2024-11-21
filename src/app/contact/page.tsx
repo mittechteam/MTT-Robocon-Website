@@ -4,10 +4,10 @@ import Contact from "./ContactUs";
 
 export default function Page() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen mb-16">
       <section className="text-white py-24">
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-5xl font-bold text-center mx-18 my-24">Get in <span className="text-red-500">Touch ☎️</span></h1>
+        <h1 className="text-4xl lg:text-5xl font-bold text-center mx-18 my-24">Get in <span className="text-red-500">Touch ☎️</span></h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 text-center">
         <button
           className="flex flex-col items-center space-y-4 bg-transparent border-none cursor-pointer hover:text-blue-300"
@@ -21,7 +21,7 @@ export default function Page() {
           <MapPin className="w-12 h-12 text-red-500" />
           <div>
           <p>MTT Robocon Lab</p>
-          <p>
+          <p className="px-6">
           Mahaveer Bldg, MIT WPU Campus, Kothrud, Pune, Maharashtra, Pin-411038
           </p>
           </div>

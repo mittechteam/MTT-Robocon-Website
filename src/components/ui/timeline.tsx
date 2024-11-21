@@ -37,10 +37,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto pt-32 px-4 md:px-8 lg:px-10">
-        <h2 className="text-5xl font-semibold  mb-4 text-[#c73808]">
-          Achievements 🥇
+        <h2 className="text-3xl lg:text-5xl font-semibold mb-4 text-[#c73808]">
+          Achievements🥇
         </h2>
-        <p className="text-white dark:text-neutral-300 text-sm md:text-base max-w-2xl text-justify">
+        <p className="text-white dark:text-neutral-300 text-sm md:text-base text-justify">
           Since the inception of our team, we have had the honor of representing
           India at the International Robocon event five times. These
           accomplishments are a testament to the dedication and support of our

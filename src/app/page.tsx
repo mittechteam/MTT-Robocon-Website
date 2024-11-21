@@ -2,7 +2,13 @@ import React from "react";
 import dynamic from "next/dynamic";
 import Carousel from "@/components/logoCarousel/carousel";
 import GradualSpacing from "@/components/ui/gradual-spacing";
-import { Instagram, Linkedin, Twitter, YoutubeIcon, Facebook } from 'lucide-react';
+import {
+  Instagram,
+  Linkedin,
+  Twitter,
+  YoutubeIcon,
+  Facebook,
+} from "lucide-react";
 import { HeroVideoDialogDemo } from "@/components/videoHero/heroVideo";
 
 const Scene = dynamic(() => import("@/components/model/scene"), { ssr: false });
@@ -47,7 +53,7 @@ export default function Page() {
           <ScrollDown />
         </div>
         <div className="max-w-full lg:max-w-2xl mb-8 lg:mb-0 lg:w-1/2">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4">
+          <h1 className="text-4xl font-bold text-white mb-4">
             <span className="text-[#c73808]">MIT</span> Tech Team
           </h1>
           <p className="mt-4 font-normal text-sm sm:text-base text-justify text-gray-400">
@@ -59,9 +65,9 @@ export default function Page() {
             represent India on the international stage. Join us on this exciting
             journey!
           </p>
-          <div className="w-fit mt-4 sm:mt-6">
+          <div className="w-fit mx-auto mt-4 sm:mt-6 hidden sm:block">
             <GradualSpacing
-              className="font-display italic text-start text-[10px] sm:text-lg md:text-xl font-bold -tracking-widest text-[#c73808] dark:text-white md:leading-[3rem] lg:leading-[5rem]"
+              className="font-display italic text-start text-base sm:text-lg md:text-xl font-bold -tracking-widest text-[#c73808] dark:text-white md:leading-[3rem] lg:leading-[5rem]"
               text="We don't just build Robots, We build people who build robots"
             />
           </div>
@@ -72,7 +78,10 @@ export default function Page() {
                 href={url}
                 className={`text-gray-400 ${hoverColor} transition-colors duration-300`}
               >
-                <Icon size={24} className="sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10" />
+                <Icon
+                  size={24}
+                  className="sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
+                />
               </a>
             ))}
           </div>
@@ -88,4 +97,3 @@ export default function Page() {
     </>
   );
 }
-
