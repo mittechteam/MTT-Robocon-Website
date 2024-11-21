@@ -53,7 +53,7 @@ export default function Page() {
           <ScrollDown />
         </div>
         <div className="max-w-full lg:max-w-2xl mb-8 lg:mb-0 lg:w-1/2">
-          <h1 className="text-4xl font-bold text-white mb-4">
+          <h1 className="sm:text-4xl lg:text-7xl text-4xl font-bold text-white mb-4">
             <span className="text-[#c73808]">MIT</span> Tech Team
           </h1>
           <p className="mt-4 font-normal text-sm sm:text-base text-justify text-gray-400">
