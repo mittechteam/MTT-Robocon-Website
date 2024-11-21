@@ -456,11 +456,11 @@ const cards = [
 
 const page = () => {
   return (
-    <div className="max-w-7xl mx-auto pt-48 px-4 md:px-8 lg:px-10">
-      <h2 className="text-5xl font-semibold px-24 mb-4 text-[#c73808]">
+    <div className="max-w-7xl mx-auto pt-32 px-4 md:px-8 lg:px-10">
+      <h2 className="text-5xl font-semibold  mb-4 text-[#c73808]">
         Meet Our Team 👏
       </h2>
-      <p className="text-white px-24 text-sm md:text-base  mb-10 text-justify">
+      <p className="text-white dark:text-neutral-300 text-sm md:text-base max-w-2xl text-justify">
         Our team is a group of dedicated individuals who are passionate about
         their work.
       </p>

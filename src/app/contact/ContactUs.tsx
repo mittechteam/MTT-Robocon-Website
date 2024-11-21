@@ -68,7 +68,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto px-4 py-12 text-white">
+    <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto px-8 py-12 text-white">
       <div className="space-y-16">
         <div>
           <h2 className="text-4xl font-bold tracking-tight">Message Us</h2>
