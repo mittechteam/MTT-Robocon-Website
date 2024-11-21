@@ -16,8 +16,8 @@ Welcome to the official repository of the **MIT Tech Team** website! This platfo
 ## 🚀 Tech Stack  
 - **Framework**: Next.js  
 - **Language**: JavaScript (React)  
-- **Styling**: Tailwind CSS (or mention if you used CSS modules, SCSS, etc.)  
-- **Hosting**: (If applicable, e.g., Vercel, Netlify)  
+- **Styling**: Tailwind CSS 
+- **Hosting**: Vercel, College Domain(mitwpu.edu) 
 
 ---
 
@@ -68,8 +68,8 @@ Contributions are welcome! Feel free to fork the repo, make improvements, and su
 ---
 
 ## 📬 Contact  
-For queries or feedback, reach out to **MIT Tech Team** at [example@mitwpu.edu](mailto:example@mitwpu.edu).  
+For queries or feedback, reach out to **MIT Tech Team** at [robocon.mit@gmail.com](mailto:robocon.mit@gmail.com).  
 
 ---
 
-**Developed with ❤️ by [Your Name](https://github.com/yourusername)**  
+**Developed with ❤️ by [Mehul Uttam](https://github.com/tallman1O)**  
