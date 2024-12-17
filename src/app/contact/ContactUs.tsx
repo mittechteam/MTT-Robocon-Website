@@ -132,7 +132,7 @@ export default function ContactForm() {
               required
             />
           </div>
-          <Button type="submit" className="w-full bg-red-700 hover:bg-red-500" disabled={loading}>
+          <Button type="submit" className="w-full bg-red-800 hover:bg-red-500" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}
           </Button>
         </form>

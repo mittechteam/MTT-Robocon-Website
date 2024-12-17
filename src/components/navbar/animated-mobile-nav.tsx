@@ -58,6 +58,13 @@ export default function AnimatedMobileNav() {
           >
             gallery.
           </Link>
+          <Link
+            className="opacity-70 hover:opacity-100 transition-opacity"
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+          >
+            contact.
+          </Link>
         </nav>
         <div className="flex justify-between items-end">
           <div className="flex space-x-4">
@@ -148,9 +155,14 @@ export default function AnimatedMobileNav() {
               </svg>
             </a>
           </div>
-          <Link href="/contact" onClick={() => setIsOpen(false)}>
+          <Link
+            href="https://forms.gle/JjDRka53DCJYrGju6"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+          >
             <Button className="bg-red-900 hover:bg-red-700 text-white rounded-full px-6 py-3">
-              Contact →
+              Recruitment →
             </Button>
           </Link>
         </div>

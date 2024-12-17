@@ -10,7 +10,7 @@ export default function NavigationWrapper() {
   useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
-      setIsMobile(window.innerWidth < 768)
+      setIsMobile(window.innerWidth < 1024)
     }
     
     // Add event listener
