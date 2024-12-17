@@ -42,7 +42,7 @@ export default function ContactForm() {
       if (result.success) {
         console.log("Form submitted successfully:", result);
         toast({
-          title: "Success",
+          title: "Success ✅",
           description: "Your message has been sent successfully.",
           variant: "default",
         });
@@ -50,7 +50,7 @@ export default function ContactForm() {
       } else {
         console.error("Form submission failed:", result);
         toast({
-          title: "Error",
+          title: "Error ‼️",
           description: "Failed to send your message. Please try again.",
           variant: "destructive",
         });
@@ -58,7 +58,7 @@ export default function ContactForm() {
     } catch (error) {
       console.error("Error during form submission:", error);
       toast({
-        title: "Error",
+        title: "Error ⚠️",
         description: "An unexpected error occurred. Please try again later.",
         variant: "destructive",
       });
