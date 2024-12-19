@@ -30,41 +30,23 @@ export default function AnimatedMobileNav() {
           </button>
         </div>
         <nav className="flex-grow flex flex-col justify-center space-y-4 text-4xl font-bold">
-          <Link
-            className="opacity-70 hover:opacity-100 transition-opacity"
-            href="/"
-            onClick={() => setIsOpen(false)}
-          >
-            home.
-          </Link>
-          <Link
-            className="opacity-70 hover:opacity-100 transition-opacity"
-            href="/team"
-            onClick={() => setIsOpen(false)}
-          >
-            team.
-          </Link>
-          <Link
-            className="opacity-70 hover:opacity-100 transition-opacity"
-            href="/achievements"
-            onClick={() => setIsOpen(false)}
-          >
-            achievements.
-          </Link>
-          <Link
-            className="opacity-70 hover:opacity-100 transition-opacity"
-            href="/gallery"
-            onClick={() => setIsOpen(false)}
-          >
-            gallery.
-          </Link>
-          <Link
-            className="opacity-70 hover:opacity-100 transition-opacity"
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-          >
-            contact.
-          </Link>
+          {[
+            { href: "/", label: "home." },
+            { href: "/team", label: "team." },
+            { href: "/achievements", label: "achievements." },
+            { href: "/gallery", label: "gallery." },
+            { href: "/alumni", label: "alumni." },
+            { href: "/contact", label: "contact." },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              className="opacity-70 hover:opacity-100 transition-opacity"
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
         <div className="flex justify-between items-end">
           <div className="flex space-x-4">
