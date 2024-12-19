@@ -1,9 +1,10 @@
 import React from "react";
+import { GlobeDemo } from "./heroSection";
 
 const page = () => {
   return (
     <section className="min-h-screen w-full">
-      <div className=" py-40 w-full">
+      {/* <div className=" py-40 w-full">
         <div className="max-w-7xl mx-auto text-center">
           <p className="font-bold text-xl md:text-4xl text-white">
             Our <span className="text-red-500">Alumni</span>
@@ -18,7 +19,8 @@ const page = () => {
             positive impact they are making in the world.
           </p>
         </div>
-      </div>
+      </div> */}
+      <GlobeDemo />
     </section>
   );
 };
