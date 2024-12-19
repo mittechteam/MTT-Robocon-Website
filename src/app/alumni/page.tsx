@@ -1,15 +1,18 @@
 import React from "react";
-import { GlobeDemo } from "./heroSection";
 import { AlumniSection } from "./alumniSection";
+import dynamic from "next/dynamic";
 
 const page = () => {
+  const RobotAnimation = dynamic(() => import("../alumni/robotAnimation"), {
+    ssr: false,
+  });
   return (
-    <section className="min-h-screen w-full ">
+    <section className="min-h-screen w-full px-4 md:px-8 lg:px-10 ">
       <div className="max-w-7xl mx-auto text-center mt-36 mb-10">
-        <p className="font-bold text-xl md:text-4xl text-white">
+        <p className="text-3xl lg:text-5xl font-semibold mb-4 text-white">
           Our <span className="text-red-500">Alumni</span>
         </p>
-        <p className="text-base text-neutral-300 max-w-6xl text-justify mx-auto py-4">
+        <p className="text-white dark:text-neutral-300 text-sm md:text-base text-justify py-4">
           Our alumni have gone on to achieve remarkable success in various
           fields across the globe. From pioneering technological advancements to
           leading major corporations, they continue to make significant
@@ -19,7 +22,7 @@ const page = () => {
           positive impact they are making in the world.
         </p>
         <div className=" gap-6 lg:grid grid-cols-2 items-center justify-center">
-          <GlobeDemo />
+          <RobotAnimation />
           <AlumniSection />
         </div>
       </div>
