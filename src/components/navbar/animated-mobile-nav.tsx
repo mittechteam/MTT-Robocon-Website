@@ -35,7 +35,7 @@ export default function AnimatedMobileNav() {
             { href: "/team", label: "team." },
             { href: "/achievements", label: "achievements." },
             { href: "/gallery", label: "gallery." },
-            { href: "/alumni", label: "alumni." },
+            // { href: "/alumni", label: "alumni." },
             { href: "/contact", label: "contact." },
           ].map((item) => (
             <Link
