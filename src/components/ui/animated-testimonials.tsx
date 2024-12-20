@@ -2,7 +2,9 @@
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { LinkedinIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 type Testimonial = {
@@ -10,7 +12,9 @@ type Testimonial = {
   name: string;
   designation: string;
   src: string;
+  linkedInSrc: string; // Changed from URL type to string
 };
+
 export const AnimatedTestimonials = ({
   testimonials,
   autoplay = false,
@@ -34,7 +38,7 @@ export const AnimatedTestimonials = ({
 
   useEffect(() => {
     if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
+      const interval = setInterval(handleNext, 8000);
       return () => clearInterval(interval);
     }
   }, [autoplay, handleNext]);
@@ -42,9 +46,10 @@ export const AnimatedTestimonials = ({
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
   };
+
   return (
-    <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 py-10">
-      <div className="relative grid grid-cols-1 md:grid-cols-2  gap-20">
+    <div className="max-w-sm md:max-w-4xl mx-auto antialiased px-4 md:px-8 py-10">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
@@ -77,7 +82,7 @@ export const AnimatedTestimonials = ({
                     duration: 0.4,
                     ease: "easeInOut",
                   }}
-                  className="absolute py-10 inset-0 origin-bottom h-fit z-10"
+                  className="absolute py-10 inset-0 origin-bottom h-fit"
                 >
                   <Image
                     src={testimonial.src}
@@ -108,7 +113,7 @@ export const AnimatedTestimonials = ({
               opacity: 0,
             }}
             transition={{
-              duration: 0.2,
+              duration: 0.4,
               ease: "easeInOut",
             }}
           >
@@ -137,26 +142,33 @@ export const AnimatedTestimonials = ({
                     ease: "easeInOut",
                     delay: 0.02 * index,
                   }}
-                  className="inline-block font-spaceGrotesk"
+                  className="font-spaceGrotesk"
                 >
                   {word}&nbsp;
                 </motion.span>
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-16 md:pt-6">
-            <button
-              onClick={handlePrev}
-              className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-            >
-              <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-            >
-              <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
-            </button>
+          <div className="flex justify-between gap-4 pt-16 md:pt-6">
+            <div className="flex gap-4">
+              <button
+                onClick={handlePrev}
+                className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+              >
+                <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
+              </button>
+              <button
+                onClick={handleNext}
+                className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+              >
+                <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
+              </button>
+            </div>
+            <div className="h-7 w-7 rounded-sm text-white hover:text-blue-400 cursor-pointer flex items-end justify-end group/button mr-3">
+              <Link href={testimonials[active].linkedInSrc} target="_blank">
+                <LinkedinIcon />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
