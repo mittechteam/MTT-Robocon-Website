@@ -29,7 +29,7 @@
     "lucide-react": "^0.446.0",
     "mini-svg-data-uri": "^1.4.4",
     "motion": "^11.15.0",
-    "next": "14.2.13",
+    "next": "14.2.15",
     "nodemailer": "^6.9.16",
     "qss": "^3.0.0",
     "react": "^18",
