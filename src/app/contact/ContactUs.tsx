@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Headphones } from 'lucide-react';
+import { Headphones } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export default function ContactForm() {
@@ -17,9 +17,13 @@ export default function ContactForm() {
 
     const target = e.target as HTMLFormElement;
     const name = (target.elements.namedItem("name") as HTMLInputElement).value;
-    const email = (target.elements.namedItem("email") as HTMLInputElement).value;
-    const phone = (target.elements.namedItem("phone") as HTMLInputElement).value;
-    const message = (target.elements.namedItem("message") as HTMLTextAreaElement).value;
+    const email = (target.elements.namedItem("email") as HTMLInputElement)
+      .value;
+    const phone = (target.elements.namedItem("phone") as HTMLInputElement)
+      .value;
+    const message = (
+      target.elements.namedItem("message") as HTMLTextAreaElement
+    ).value;
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -73,7 +77,8 @@ export default function ContactForm() {
         <div>
           <h2 className="text-4xl font-bold tracking-tight">Message Us</h2>
           <p className="text-lg text-muted-foreground mt-2">
-            Our dedicated team is always available to answer your questions and assist with your needs.
+            Our dedicated team is always available to answer your questions and
+            assist with your needs.
           </p>
         </div>
         <div className="flex items-start space-x-6">
@@ -86,13 +91,19 @@ export default function ContactForm() {
           </div>
         </div>
       </div>
-      <div className="space-y-8">
-        <form className="space-y-4" onSubmit={handleSubmit}>
+      <div className="flex p-6 border-2 rounded-lg space-y-8">
+        <form className="space-y-4 w-full" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium mb-2">
               Full Name
             </label>
-            <Input id="name" name="name" placeholder="First Last" className="text-black" required />
+            <Input
+              id="name"
+              name="name"
+              placeholder="First Last"
+              className="text-black"
+              required
+            />
           </div>
           <div>
             <label htmlFor="email" className="block text-sm font-medium mb-2">
@@ -132,7 +143,11 @@ export default function ContactForm() {
               required
             />
           </div>
-          <Button type="submit" className="w-full bg-red-800 hover:bg-red-500" disabled={loading}>
+          <Button
+            type="submit"
+            className="w-full bg-red-800 hover:bg-red-500"
+            disabled={loading}
+          >
             {loading ? "Sending..." : "Send Message"}
           </Button>
         </form>
