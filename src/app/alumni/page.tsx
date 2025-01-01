@@ -1,12 +1,8 @@
 import React from "react";
 import { AlumniSection } from "./alumniSection";
-import dynamic from "next/dynamic";
 import { WorldMapDemo } from "./worldMap";
 
 const page = () => {
-  const RobotAnimation = dynamic(() => import("../alumni/robotAnimation"), {
-    ssr: false,
-  });
   return (
     <section className="min-h-screen w-full px-4 md:px-8 lg:px-10 ">
       <div className="max-w-7xl mx-auto text-center mt-36 mb-10">
@@ -23,8 +19,7 @@ const page = () => {
           positive impact they are making in the world.
         </p>
         <WorldMapDemo />
-        <div className=" gap-6 lg:grid grid-cols-2 items-center justify-center">
-          <RobotAnimation />
+        <div className=" gap-6 flex flex-row items-center justify-center">
           <AlumniSection />
         </div>
       </div>

@@ -1,64 +1,56 @@
-import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { FocusCards } from "@/components/ui/focus-cards";
 
 export function AlumniSection() {
-  const alumni = [
+  const cards = [
     {
-      quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Soham Patil",
-      designation: "MS at RRC, IIITH, Hyderabad",
+      title: "Soham Patil",
       src: "/alumni/Soham-Patil.jpg",
-      linkedInSrc: "https://www.linkedin.com/in/sohampatil2560/",
+      designation: "MS at RRC, IIITH",
+      location: "Hyderabad",
+      linkedIn: "https://www.linkedin.com/in/sohampatil2560/",
     },
     {
-      quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Siddhant Vaidya",
-      designation: "Senior Quant Analyst, Pune",
+      title: "Siddhant Vaidya",
       src: "/alumni/Siddhant-Vaidya.jpg",
-      linkedInSrc: "https://www.linkedin.com/in/siddhant-vaidya/",
+      designation: "Senior Quant Analyst",
+      location: "Pune",
+      linkedIn: "https://www.linkedin.com/in/siddhant-vaidya/",
     },
     {
-      quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      name: "Nishant Jain",
-      designation: "Software Developer, Mumbai ",
+      title: "Nishant Jain",
       src: "/alumni/Nishant-Jain.jpg",
-      linkedInSrc: "https://www.linkedin.com/in/nishant-jain01/",
+      designation: "Software Developer",
+      location: "Mumbai",
+      linkedIn: "https://www.linkedin.com/in/nishant-jain01/",
     },
     {
-      quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Paresh Chaudhary",
-      designation: "Researcher at University of Washington, Seattle",
+      title: "Paresh Chaudhary",
       src: "/alumni/Paresh-Chaudhary.jpg",
-      linkedInSrc: "https://www.linkedin.com/in/pareshrchaudhary/",
+      designation: "Researcher at University of Washington",
+      location: "Seattle",
+      linkedIn: "https://www.linkedin.com/in/pareshrchaudhary/",
     },
     {
-      quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Akash Kulkarni",
-      designation:
-        "Master's in Robotic systems engineering at RWTH Aachen University, Germany",
+      title: "Akash Kulkarni",
       src: "/alumni/Akash-Kulkarni.jpg",
-      linkedInSrc: "https://www.linkedin.com/in/akashkulkarni1998",
+      designation: "Master's in Robotic systems engineering at RWTH Aachen University",
+      location: "Germany",
+      linkedIn: "https://www.linkedin.com/in/akashkulkarni1998",
     },
     {
-      quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Suman Mandal",
-      designation: "Associate consultant at Oracle, Pune",
+      title: "Suman Mandal",
       src: "/alumni/Suman-Mandal.jpg",
-      linkedInSrc: "http://linkedin.com/in/suman-mandal05",
+      designation: "Associate consultant at Oracle",
+      location: "Pune",
+      linkedIn: "http://linkedin.com/in/suman-mandal05",
     },
     {
-      quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Yashas Shetty",
-      designation: "Sr Electrical Engineer at Medtronic, New Haven",
+      title: "Yashas Shetty",
       src: "/alumni/Yashas-Shetty.jpg",
-      linkedInSrc: "https://www.linkedin.com/in/yashas-shetty-046858168/",
+      designation: "Sr Electrical Engineer at Medtronic",
+      location: "New Haven, USA",
+      linkedIn: "https://www.linkedin.com/in/yashas-shetty-046858168/",
     },
   ];
-  return <AnimatedTestimonials testimonials={alumni} autoplay />;
+  return <FocusCards cards={cards} />;
 }
