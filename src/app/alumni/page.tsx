@@ -1,6 +1,7 @@
 import React from "react";
 import { AlumniSection } from "./alumniSection";
 import dynamic from "next/dynamic";
+import { WorldMapDemo } from "./worldMap";
 
 const page = () => {
   const RobotAnimation = dynamic(() => import("../alumni/robotAnimation"), {
@@ -21,6 +22,7 @@ const page = () => {
           respective careers. We are proud of their accomplishments and the
           positive impact they are making in the world.
         </p>
+        <WorldMapDemo />
         <div className=" gap-6 lg:grid grid-cols-2 items-center justify-center">
           <RobotAnimation />
           <AlumniSection />
