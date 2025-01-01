@@ -3,12 +3,12 @@ import WorldMap from "@/components/ui/world-map";
 
 export function WorldMapDemo() {
   return (
-    <div className=" pb-20 w-full">
+    <div className=" pb-20 w-full md:block hidden">
       <WorldMap
         dots={[
           {
             start: {
-              lat: 64.2008,
+              lat: 564.2008,
               lng: -149.4937,
             }, // Alaska (Fairbanks)
             end: {

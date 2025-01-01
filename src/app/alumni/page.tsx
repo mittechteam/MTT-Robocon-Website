@@ -4,7 +4,7 @@ import { WorldMapDemo } from "./worldMap";
 
 const page = () => {
   return (
-    <section className="min-h-screen w-full px-4 md:px-8 lg:px-10 ">
+    <section className="min-h-screen w-full px-4 md:px-8 lg:px-10 overflow-hidden">
       <div className="max-w-7xl mx-auto text-center mt-36 mb-10">
         <p className="text-3xl lg:text-5xl font-semibold mb-4 text-white">
           Our <span className="text-red-500">Alumni</span>
