@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import Contact from "./ContactUs";
 import { Metadata } from "next";
 
-export const metaData: Metadata = {
+export const metadata: Metadata = {
   title: "Contact | MIT Tech Team",
   description:
     "Get in touch with us at MIT Tech Team. We are always happy to help you.",

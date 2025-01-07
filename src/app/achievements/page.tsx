@@ -1,9 +1,9 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
-import { Metadata } from "next";
 
-export const metaData: Metadata = {
+export const metadata: Metadata = {
   title: "Achievements | MIT Tech Team",
   description:
     "Achievements of MIT Tech Team, the official robotics team of MIT-WPU Pune India ",
