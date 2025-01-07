@@ -1,6 +1,6 @@
+"use client";
 import React from "react";
 import Teams from "./teams";
-import { Metadata } from "next";
 
 const cards = [
   {
@@ -453,15 +453,6 @@ const cards = [
     },
   },
 ];
-
-export const metadata: Metadata = {
-  title: "Team | MIT Tech Team",
-  description:
-    "Meet the dedicated individuals who make up the MIT Tech Team. Our team is a group of passionate individuals who are committed to their work.",
-  icons: {
-    icon: "/MTT-Logo.svg",
-  },
-};
 
 const page = () => {
   return (
