@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Alumni of MIT Tech Team have gone on to achieve remarkable success in various fields across the globe.",
   icons: {
-    icon: "/MTT-Logo.svg",
+    icon: "/favicon.ico",
   },
 };
 

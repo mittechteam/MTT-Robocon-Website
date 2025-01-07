@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Achievements of MIT Tech Team, the official robotics team of MIT-WPU Pune India ",
   icons: {
-    icon: "/MTT-Logo.svg",
+    icon: "/favicon.ico",
   },
 };
 

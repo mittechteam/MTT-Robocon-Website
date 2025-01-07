@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "MIT-WPU Tech Team",
   description: "Official Robotics Team of MIT-WPU",
   icons: {
-    icon: "/MTT-Logo.svg",
+    icon: "/favicon.ico",
   },
 };
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/MTT-logo.svg" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <div className="min-h-screen relative bg-black dark:bg-white bg-dot-white/[0.2] dark:bg-dot-white/[0.2] overflow-hidden">
