@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "MIT-WPU Tech Team",
   description: "Official Robotics Team of MIT-WPU",
   icons: {
-    icon: ["/favicon.ico", "/MTT_logo.svg"],
+    icon: "/favicon.ico",
   },
 };
 
