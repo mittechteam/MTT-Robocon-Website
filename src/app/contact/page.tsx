@@ -1,4 +1,3 @@
-"use client";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Contact from "./ContactUs";
 import { Metadata } from "next";
