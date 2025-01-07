@@ -1,6 +1,16 @@
 import Image from "next/image";
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
+import { Metadata } from "next";
+
+export const metaData: Metadata = {
+  title: "Achievements | MIT Tech Team",
+  description:
+    "Achievements of MIT Tech Team, the official robotics team of MIT-WPU Pune India ",
+  icons: {
+    icon: "/MTT-Logo.svg",
+  },
+};
 
 export default function Achievements() {
   const data = [

@@ -45,6 +45,7 @@ const ScrollDown = dynamic(() => import("@/components/ui/scrollDown"), {
   ssr: false,
 });
 
+
 export default function Page() {
   return (
     <>

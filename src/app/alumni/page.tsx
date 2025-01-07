@@ -1,6 +1,16 @@
 import React from "react";
 import { AlumniSection } from "./alumniSection";
 import { WorldMapDemo } from "./worldMap";
+import { Metadata } from "next";
+
+export const metaData: Metadata = {
+  title: "Alumni | MIT Tech Team",
+  description:
+    "Alumni of MIT Tech Team have gone on to achieve remarkable success in various fields across the globe.",
+  icons: {
+    icon: "/MTT-Logo.svg",
+  },
+};
 
 const page = () => {
   return (

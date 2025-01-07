@@ -1,5 +1,15 @@
 import React from "react";
 import Gallery from "./gallery";
+import { Metadata } from "next";
+
+export const metaData: Metadata = {
+  title: "Gallery | MIT Tech Team",
+  description:
+    "A collection of memories from the events and competitions we have participated in.",
+  icons: {
+    icon: "/MTT-Logo.svg",
+  },
+};
 
 const page = () => {
   return (
@@ -13,4 +23,3 @@ const page = () => {
 };
 
 export default page;
-
