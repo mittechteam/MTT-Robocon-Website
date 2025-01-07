@@ -10,6 +10,7 @@ import {
   Facebook,
 } from "lucide-react";
 import { HeroVideoDialogDemo } from "@/components/videoHero/heroVideo";
+import { Metadata } from "next";
 
 const Scene = dynamic(() => import("@/components/model/scene"), { ssr: false });
 
@@ -45,6 +46,14 @@ const ScrollDown = dynamic(() => import("@/components/ui/scrollDown"), {
   ssr: false,
 });
 
+export const metadata: Metadata = {
+  title: "Home | MIT Tech Team",
+  description:
+    "At MIT-World Peace University, Pune, India, we are proud participants of ABU Robocon. With over 100 Indian teams competing annually, our team stands out as one of the top robotics teams in the country. As we set our sights on the DD Robocon 2025, we are more determined than ever to achieve victory and once again proudly represent India on the international stage. Join us on this exciting journey!",
+  icons: {
+    icon: "/MTT_logo.svg",
+  },
+};
 
 export default function Page() {
   return (

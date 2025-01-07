@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "A collection of memories from the events and competitions we have participated in.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/MTT_logo.svg",
   },
 };
 
