@@ -1,6 +1,5 @@
 import React from "react";
 import { AlumniSection } from "./alumniSection";
-import { WorldMapDemo } from "./worldMap";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -28,8 +27,7 @@ const page = () => {
           respective careers. We are proud of their accomplishments and the
           positive impact they are making in the world.
         </p>
-        <WorldMapDemo />
-        <div className=" gap-6 flex flex-row items-center justify-center">
+        <div className=" gap-6 flex flex-row items-center justify-center mt-12">
           <AlumniSection />
         </div>
       </div>
