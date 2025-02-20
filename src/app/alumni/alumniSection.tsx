@@ -51,6 +51,27 @@ export function AlumniSection() {
       location: "New Haven, USA",
       linkedIn: "https://www.linkedin.com/in/yashas-shetty-046858168/",
     },
+    {
+      title: "Gaurav Raj",
+      src: "/alumni/Gaurav-Raj.jpg",
+      designation: "Senior Software Engineer at Citi",
+      location: "Pune",
+      linkedIn: "https://www.linkedin.com/in/gauravraj8576/",
+    },
+    {
+      title: "Abhinav Warrier",
+      src: "/alumni/Abhinav-Warrier.jpg",
+      designation: "Co-Founder of Rightbot",
+      location: "New York",
+      linkedIn: "https://www.linkedin.com/in/abhinavwarrier/",
+    },
+    {
+      title: "Samarth Kalluraya",
+      src: "/alumni/Samarth-Kalluraya.png",
+      designation: "Ph.D in Robotics at Washington University in St. Louis",
+      location: "St. Louis, USA",
+      linkedIn: "https://www.linkedin.com/in/samarth-kalluraya/",
+    }
   ];
   return <FocusCards cards={cards} />;
 }

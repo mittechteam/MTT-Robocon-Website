@@ -27,7 +27,7 @@ export const ParallaxScroll = ({
   const firstPart = images.slice(0, third);
   const secondPart = images.slice(third, 2 * third);
   const thirdPart = images.slice(2 * third);
-
+  
   return (
     <div
       className={cn("h-[40rem] items-start overflow-y-auto w-full", className)}
