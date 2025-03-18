@@ -8,8 +8,9 @@ import logo4 from "@/assets/logos/sponsor-4.svg";
 import logo5 from "@/assets/logos/sponsor-5.svg";
 import logo6 from "@/assets/logos/sponsor-61.svg";
 import logo7 from "@/assets/logos/sponsor-7.svg";
+import logo8 from "@/assets/logos/sponsor-8.jpg";
 
-const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7];
+const logos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8];
 
 const Carousel: React.FC = () => {
   return (
