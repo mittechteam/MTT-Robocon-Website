@@ -63,7 +63,7 @@ MIT-Tech-Team-Website/
 ---
 
 ## 🏆 Contributions  
-Contributions are welcome! Feel free to fork the repo, make improvements, and submit a pull request.  
+Contributions are welcome! Feel free to fork the repo, make improvements, and submit a pull request!  
 
 ---
 
