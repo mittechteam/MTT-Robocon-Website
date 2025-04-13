@@ -67,7 +67,7 @@ export default function Page() {
             <span className="text-[#c73808]">MIT</span> Tech Team
           </h1>
           <p className="mt-4 font-normal text-sm sm:text-base text-justify text-gray-400">
-            At MIT-World Peace University, Pune, India, we are proud
+            At MIT - World Peace University, Pune, India, we are proud
             participants of ABU Robocon. With over 100 Indian teams competing
             annually, our team stands out as one of the top robotics teams in
             the country. As we set our sights on the DD Robocon 2025, we are
