@@ -31,7 +31,7 @@ const cards = [
     content: () => {
       return (
         <p>
-          Jayesh Sangave serves as the Vice Captain of his team, is an integral member of the MIT Tech Team&apos;s
+          Jayesh Sangave serves as the Captain of his team, is an integral member of the MIT Tech Team&apos;s
           Controls Department, having joined in August 2023. A third-year BTech
           CSE student, he has a solid foundation in microcontrollers and
           embedded systems, contributing to both technical and operational
