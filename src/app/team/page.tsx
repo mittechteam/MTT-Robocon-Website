@@ -441,6 +441,10 @@ const batchCards: Record<BatchValue, typeof cards> = {
           "Aaditya Patil",
           "Sujal Bafna",
           "Piyusha Patil",
+          "Shreeya Suresh",
+          "Kishan Naik",
+          "S.Balamurugan",
+          "Manasee Ambhore",
         ]);
         return !removed.has(card.title);
       })
