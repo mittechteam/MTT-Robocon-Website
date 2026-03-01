@@ -58,6 +58,16 @@ export default function AnimatedMobileNav() {
             {isTeamOpen && (
               <div className="ml-4 flex flex-col space-y-2 text-2xl font-semibold">
                 <Link
+                  href="/team?batch=2025-26"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsTeamOpen(false);
+                  }}
+                >
+                  current batch
+                </Link>
+                <Link
                   href="/team?batch=2024-25"
                   className="opacity-80 hover:opacity-100 transition-opacity"
                   onClick={() => {
@@ -66,16 +76,6 @@ export default function AnimatedMobileNav() {
                   }}
                 >
                   2024–25 batch
-                </Link>
-                <Link
-                  href="/team?batch=2025-26"
-                  className="opacity-80 hover:opacity-100 transition-opacity"
-                  onClick={() => {
-                    setIsOpen(false);
-                    setIsTeamOpen(false);
-                  }}
-                >
-                  2025–26 batch
                 </Link>
               </div>
             )}
