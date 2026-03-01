@@ -63,17 +63,17 @@ function Navbar({ className }: { className?: string }) {
               >
                 <button
                   type="button"
-                  onClick={() => handleNavigate("/team?batch=2025-26")}
+                  onClick={() => handleNavigate("/team?team=2025-26")}
                   className="py-1 text-left text-sm font-spaceGrotesk text-gray-300 hover:text-[#c73808]"
                 >
-                  Current Batch
+                  Current Team
                 </button>
                 <button
                   type="button"
-                  onClick={() => handleNavigate("/team?batch=2024-25")}
+                  onClick={() => handleNavigate("/team?team=2024-25")}
                   className="mt-1 py-1 text-left text-sm font-spaceGrotesk text-gray-300 hover:text-[#c73808]"
                 >
-                  2024–25 Batch
+                  2024–25 Team
                 </button>
               </motion.div>
             )}
