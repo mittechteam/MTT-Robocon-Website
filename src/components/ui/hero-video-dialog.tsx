@@ -73,6 +73,11 @@ function getYouTubeId(url: string) {
   return match && match[2].length === 11 ? match[2] : null;
 }
 
+function getDrivePreview(url: string) {
+  const match = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  return match ? `https://drive.google.com/file/d/${match[1]}/preview` : null;
+}
+
 export default function HeroVideoDialog({
   animationStyle = "from-center",
   videoSrc,
@@ -130,12 +135,29 @@ export default function HeroVideoDialog({
                 <XIcon className="size-5" />
               </motion.button>
               <div className="size-full border-2 border-white rounded-2xl overflow-hidden isolate z-[1] relative">
-                <iframe
-                  src={`https://www.youtube.com/embed/${getYouTubeId(videoSrc)}`}
-                  className="size-full rounded-2xl"
-                  allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                ></iframe>
+                {getYouTubeId(videoSrc) ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${getYouTubeId(videoSrc)}`}
+                    className="size-full rounded-2xl"
+                    allowFullScreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  ></iframe>
+                ) : getDrivePreview(videoSrc) ? (
+                  <iframe
+                    src={getDrivePreview(videoSrc) as string}
+                    className="size-full rounded-2xl"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <video
+                    src={videoSrc}
+                    className="size-full rounded-2xl"
+                    controls
+                    autoPlay
+                    playsInline
+                    poster={thumbnailSrc}
+                  />
+                )}
               </div>
             </motion.div>
           </motion.div>
