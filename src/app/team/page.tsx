@@ -424,11 +424,24 @@ const cards = [
       );
     },
   },
+  {
+    description: "Mech",
+    title: "Aaditya Patil",
+    src: "/team/Aditya P.jpg",
+    ctaLink: "https://www.linkedin.com/in/aaditya-patil-300444246/",
+    content: () => {
+      return (
+        <p>
+          Aaditya Patil, a robotics engineering student, is skilled in CAD design, mechanical system integration, and industrial manufacturing. As a proactive MIT Tech Team member, he applies hands-on expertise in manufacturing processes, optimizing designs to improve robot&apos;s reliability. Aaditya&apos;s proficiency in 3D modeling and component analysis showcases his practical and theoretical knowledge, demonstrating his dedication to pushing the boundaries of robotics.
+        </p>
+      );
+    },
+  },
 ];
 
 const batchOptions = [
-  { value: "current", label: "Current Batch" },
-  { value: "2024-25", label: "2024–25 Batch" },
+  { value: "current", label: "Current Team" },
+  { value: "2024-25", label: "2024–25 Team" },
 ] as const;
 
 type BatchValue = "current" | "2024-25" | "2025-26";
@@ -437,7 +450,6 @@ const batchCards: Record<"current" | "2024-25", typeof cards> = {
   "2024-25": cards.filter(
     (c) =>
       !new Set([
-        "Aaditya Patil",
         "Kishan Naik",
         "Manasee Ambhore",
         "S.Balamurugan",
@@ -590,19 +602,27 @@ const batchCards: Record<"current" | "2024-25", typeof cards> = {
 
 const TeamPageContent = () => {
   const searchParams = useSearchParams();
-  const raw = searchParams.get("batch");
+  const raw = searchParams.get("team");
   const initialBatch = (raw === "2025-26" ? "2025-26" : (raw as BatchValue)) ?? "current";
   const [selectedBatch, setSelectedBatch] = useState<BatchValue>(initialBatch);
 
   useEffect(() => {
-    const batch = searchParams.get("batch");
+    const batch = searchParams.get("team");
     if (batch === "2024-25" || batch === "current" || batch === "2025-26") {
       setSelectedBatch(batch as BatchValue);
     }
   }, [searchParams]);
 
   const normalizedKey = selectedBatch === "2025-26" ? "current" : selectedBatch;
-  const currentCards = batchCards[normalizedKey as "current" | "2024-25"];
+  const uniqByTitle = (arr: typeof cards) => {
+    const s = new Set<string>();
+    return arr.filter((c) => {
+      if (s.has(c.title)) return false;
+      s.add(c.title);
+      return true;
+    });
+  };
+  const currentCards = uniqByTitle(batchCards[normalizedKey as "current" | "2024-25"]);
 
   return (
     <div className="max-w-7xl mx-auto py-32 px-4 md:px-8 lg:px-10">
@@ -624,7 +644,7 @@ const TeamPageContent = () => {
             }
           >
             <SelectTrigger>
-              <SelectValue placeholder="Select batch" />
+              <SelectValue placeholder="Select team" />
             </SelectTrigger>
             <SelectContent>
               {batchOptions.map((option) => (
