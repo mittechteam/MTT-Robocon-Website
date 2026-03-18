@@ -1,6 +1,14 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Teams from "./teams";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useSearchParams } from "next/navigation";
 
 const cards = [
   {
@@ -24,38 +32,76 @@ const cards = [
   },
   {
     description: "Captain🧑‍✈️ - Controls",
-    title: "Harsh Chourasia",
-    src: "/team/Harsh C.jpg",
+    title: "Jayesh Sangave",
+    src: "/team/Jayesh S.jpg",
     ctaLink:
-      "https://www.linkedin.com/in/harsh-chourasia-608889281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "https://www.linkedin.com/in/jayesh-sangave-3643992a2/",
     content: () => {
       return (
         <p>
-          Captain of the team and a third-year Computer Science student, he is a
-          skilled ROS developer with a solid foundation in autonomous robotics
-          and embedded systems. As a member of the MIT Tech Team, he has played
-          a crucial role in developing and deploying advanced robotic solutions,
-          demonstrating expertise in ROS2, real-time navigation, and control
-          interfaces. He also serves as the project and timeline manager for the
-          team.
+          Jayesh Sangave serves as the Vice Captain of his team, is an integral member of the MIT Tech Team&apos;s
+          Controls Department, having joined in August 2023. A third-year BTech
+          CSE student, he has a solid foundation in microcontrollers and
+          embedded systems, contributing to both technical and operational
+          aspects, including finance and management (F&M) for the club.
+          Currently expanding his skill set in computer vision and ROS2, Jayesh
+          is involved in various tech and non-tech initiatives, ensuring the
+          team&apos;s smooth functioning. Alongside his passion for robotics and
+          automation, he has a strong interest in game development, bringing a
+          versatile approach to his role in the team.
         </p>
       );
     },
   },
   {
-    description: "Vice-Captain👨‍✈️ - Circuits",
+    description: "Vice-Captain👨‍✈️ - Controls",
+    title: "Avnish Deshmukh",
+    src: "/team/VIN_0376.JPG",
+    ctaLink: "https://www.linkedin.com/in/avnish-deshmukh/",
+    content: () => {
+      return (
+        <p>
+          Avnish Deshmukh current Vice-Captain of the team and a third-year student. A robotics enthusiast passionate about electronics, coding, and
+          mechanical design. know more about him at avnish2105.github.io.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Circuits",
     title: "Om Gunjal",
     src: "/team/OM_GUNJAL.jpg",
     ctaLink: "https://www.linkedin.com/in/om-gunjal-77b035255/",
     content: () => {
       return (
         <p>
-          Om Gunjal serves as the Vice Captain of his team, focusing on embedded
+          Om Gunjal a final-year student, focusing on embedded
           systems and circuit design in the circuits department. In addition to
           his technical role, he manages the team’s finances and oversees
           non-technical operations, fostering collaboration among team members.
           His contributions play a vital role in ensuring the team remains on
           track to achieve its goals.
+
+        </p>
+      );
+    },
+  },
+  {
+    description: "Controls",
+    title: "Harsh Chourasia",
+    src: "/team/Harsh C.jpg",
+    ctaLink: "https://www.linkedin.com/in/harsh-chourasia-608889281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    content: () => {
+      return (
+        <p>
+          A final-year Computer Science student, he is a
+          skilled ROS developer with a solid foundation in autonomous robotics
+          and embedded systems. As a member of the MIT Tech Team, he has played
+          a crucial role in developing and deploying advanced robotic solutions,
+          demonstrating expertise in ROS2, real-time navigation, and control
+          interfaces. He also serves as the project and timeline manager for the
+          team.
+
         </p>
       );
     },
@@ -79,25 +125,6 @@ const cards = [
       );
     },
   },
-  // {
-  //   description: "Controls",
-  //   title: "Aishwarya Godse",
-  //   src: "/team/Aishwarya G .jpg",
-  //   ctaLink: "https://www.linkedin.com/in/aishwarya-godse-73ba28234/",
-  //   content: () => {
-  //     return (
-  //       <p>
-  //         Aishwarya Godse is an Electrical and Computer Engineering student
-  //         focused on robotics and embedded systems. As a member of the Controls
-  //         Department, she has developed embedded code for robot navigation and
-  //         mechanism control and is currently advancing her skills in ROS2. With
-  //         experience in competition analytics, Aishwarya is dedicated to
-  //         excelling in robotics and leaving a positive impact, particularly in
-  //         traditionally male-dominated fields.
-  //       </p>
-  //     );
-  //   },
-  // },
   {
     description: "Controls",
     title: "Amruta Panda",
@@ -132,23 +159,6 @@ const cards = [
       );
     },
   },
-  // {
-  //   description: "Controls",
-  //   title: "Himadri Rajput",
-  //   src: "/team/Himadri.jpg",
-  //   ctaLink: "",
-  //   content: () => {
-  //     return (
-  //       <p>
-  //         Himadri Rajput, a Robocon team member, excels in embedded systems
-  //         coding, where her skills in microcontroller programming, learning ros
-  //         and its core concepts and firmware development make her a key
-  //         contributor to the team&apos;s technical innovation.
-  //       </p>
-  //     );
-  //   },
-  // },
-
   {
     description: "Controls",
     title: "Jayesh Sangave",
@@ -186,20 +196,6 @@ const cards = [
           navigation, and control. His work includes integrating computer vision
           for object detection and tracking, contributing to the team&apos;s
           competitive edge.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Controls",
-    title: "Avnish Deshmukh",
-    src: "/team/VIN_0376.JPG",
-    ctaLink: "https://www.linkedin.com/in/avnish-deshmukh/",
-    content: () => {
-      return (
-        <p>
-          A robotics enthusiast passionate about electronics, coding, and
-          mechanical design. know more about him at avnish2105.github.io.
         </p>
       );
     },
@@ -278,48 +274,6 @@ const cards = [
     },
   },
   {
-    description: "Circuits",
-    title: "Sujal Bafna",
-    src: "/team/Sujal B.jpg",
-    ctaLink: "https://www.linkedin.com/in/sujal-bafna-884a8722b/",
-    content: () => {
-      return (
-        <p>
-          Sujal Bafna is a final-year Electronics and Communication Engineering
-          student who has been an active and dedicated member of the club since
-          his second year. His role as an embedded circuits developer has
-          showcased his expertise in embedded systems, PCB design, robotics
-          systems, and automation. Sujal&apos;s contributions were instrumental
-          in the team&apos;s achievement of an AIR 3 at DD Robocon 2024
-          competition. Known for his diligence, and forward-thinking approach,
-          Sujal is driven by a clear vision to advance the team&apos;s
-          capabilities, foster innovation, and support the growth of robotics
-          and automation.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Mech",
-    title: "Aaditya Patil",
-    src: "/team/Aditya P.jpg",
-    ctaLink: "https://www.linkedin.com/in/aaditya-patil-300444246/",
-    content: () => {
-      return (
-        <p>
-          Aaditya Patil, a Second Year robotics engineering student, is skilled
-          in CAD design, mechanical system integration, and industrial
-          manufacturing. As a proactive MIT Tech Team member, he applies
-          hands-on expertise in manufacturing processes , optimizing designs to
-          improve robot&apos;s reliability. Aaditya&apos;s proficiency in 3D
-          modeling and component analysis showcases his practical and
-          theoretical knowledge, demonstrating his dedication to pushing the
-          boundaries of robotics
-        </p>
-      );
-    },
-  },
-  {
     description: "Mech",
     title: "Rutu Shirke",
     src: "/team/Rutu S.jpg",
@@ -367,39 +321,60 @@ const cards = [
     },
   },
   {
-    description: "Mech",
-    title: "Rameshwar Patil",
-    src: "/team/Rameshwar Patil.jpg",
-    ctaLink: "https://www.linkedin.com/in/rameshwar-patil-0000000002/",
+    description: "Circuits",
+    title: "S.Balamurugan",
+    src: "/team/Bala.JPG",
+    ctaLink: "https://www.linkedin.com/in/s-balamurugan-11598531a/",
     content: () => {
       return (
         <p>
-          Rameshwar Patil is a final-year Robotics and Automation Engineering
-          student and a former Vice Captain of the MIT Tech Team. Since joining
-          in his first year, he progressed from a supportive member honing his
-          skills to a core contributor, actively designing, prototyping, and
-          testing robots. As the manual operator at Robocon 2023, he
-          demonstrated his capabilities under pressure contributing to AIR2 in
-          2023. In his third year, Rameshwar led the team as Vice Captain,
-          blending design and programming expertise, which was pivotal in
-          securing AIR3 in DD Robocon 2024. Known for his strategic mindset,
-          he&apos;s driven to push robotics innovation forward.
+          S. Balamurugan is an integral member of the MIT Tech Team’s Circuits Department, having joined in August 2023. A second-year BTech student, he possesses a strong foundation in embedded systems, with hands-on experience in embedded programming using HAL drivers and register-level coding. He actively contributes to both technical and operational aspects of the team, including finance and management (F&M) for the club. In addition to his technical responsibilities, Bala is involved in various non-technical initiatives, ensuring the smooth functioning of the team. With a keen interest in robotics and automation, he brings a reliable and versatile approach to his role within the MIT Tech Team.
+
+        </p>
+      );
+    },
+  },
+  {
+    description: "Controls",
+    title: "Shreeya Suresh",
+    src: "/team/Shreeya.JPG",
+    ctaLink: "https://www.linkedin.com/in/shreeya-suresh-2b92ab348/",
+    content: () => {
+      return (
+        <p>
+          Shreeya is a robotics enthusiast with a strong interest in perception and navigation systems. As a member of the MIT Tech Team, she has previously worked on computer vision and perception, focusing on depth estimation for real-time visual localization. She is familiar with ROS and continues to build her understanding of robotic software frameworks through ongoing learning and experimentation. On the embedded side, Shreeya works with sensors and actuators to implement navigation on STM32 microcontrollers, exploring different navigation algorithms and developing a custom Pure Pursuit implementation on an embedded environment. Driven by curiosity and hands-on learning, she enjoys tackling practical challenges in robotics and autonomous systems.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Circuits",
+    title: "Kishan Naik",
+    src: "/team/Kishan.JPG",
+    ctaLink: "https://www.linkedin.com/in/kishan-naik-b40b0632b/",
+    content: () => {
+      return (
+        <p>
+          Kishan Naik is an embedded circuit designer at the MIT Tech Team, 
+          with a primary focus on PCB design and embedded firmware development.
+           He has designed and developed a customized STM MCM board,
+            demonstrating strong expertise in STM32-based systems and embedded electronics.
+             In addition to his strong debugging skills, Kishan has hands-on experience with register-level coding,
+              allowing for low-level system control and performance optimization. He also contributes to vendor management,
+               playing a key role in coordinating with suppliers and streamlining procurement processes.
         </p>
       );
     },
   },
   {
     description: "Non-Tech",
-    title: "Piyusha Patil",
-    src: "/team/Piyusha Patil.jpg",
-    ctaLink: "https://www.linkedin.com/in/piyusha-patil-5b2254267/",
+    title: "Vedant Pawar",
+    src: "/team/Vedant.JPG",
+    ctaLink: "https://www.linkedin.com/in/vedantpawar15/",
     content: () => {
       return (
         <p>
-          Piyusha Patil is a content writer who contributes to the non-technical
-          part of the team. She works with documentation, drafting, social media
-          & marketing of the team, and serves as a support to the technical team
-          at several events and workshops.
+          Vedant Pawar serves as the Head of the Non-Technical Team at MTT, leading strategic planning, branding, outreach, sponsorship coordination, and overall team operations beyond the technical domain. As a third-year student, he ensures seamless execution of events, communications, and team representation. Alongside his leadership responsibilities, he also contributes as the team’s Video Editor, creatively documenting MTT’s journey and milestones while strengthening its digital presence.
         </p>
       );
     },
@@ -420,53 +395,232 @@ const cards = [
   },
   {
     description: "Non-Tech",
-    title: "Vedant Pawar",
-    src: "/team/Vedant Pawar ID.png",
-    ctaLink: "https://www.linkedin.com/in/vedantpawar15/",
-    content: () => {
-      return (
-        <p>
-          Vedant Pawar is a member of the non-technical team of MTT, serving as
-          the official video editor. With a keen eye for detail and a flair for
-          storytelling, they expertly capture the essence of the team&apos;s
-          hard work, dedication, and spirit. As a second-year student, they
-          bring both creativity and technical precision to every video project,
-          showcasing the team&apos;s journey and accomplishments in a way that
-          resonates with audiences.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Non-Tech",
     title: "Harshada Gaikwad",
     src: "/team/Harshada.jpg",
     ctaLink: "https://www.linkedin.com/in/harshadavilasraogaikwad/",
     content: () => {
       return (
         <p>
-          Harshada Gaikwad 2nd year BTECH student works in events management,
+          Harshada Gaikwad 3nd year BTECH student works in events management,
           helping with sponsorships and supporting the team at various events
           and workshops.
         </p>
       );
     },
   },
+  {
+    description: "Non-Tech",
+    title: "Manasee Ambhore",
+    src: "/team/Manasee.jpg",
+    ctaLink: "https://www.linkedin.com/in/manasee-ambhore-87ab65287/",
+    content: () => {
+      return (
+        <p>
+          Manasee Ambhore a 3nd year BTECH student works in events management, providing the team various non-technical support.
+
+        </p>
+      );
+    },
+  },
 ];
 
-const page = () => {
+const batchOptions = [
+  { value: "2025-26", label: "Current Team" },
+  { value: "2024-25", label: "2024–25 Batch" },
+] as const;
+
+type BatchValue = (typeof batchOptions)[number]["value"];
+
+const batchCards: Record<BatchValue, typeof cards> = {
+  "2024-25": [
+    ...cards
+      .filter((card) => {
+        const removed = new Set([
+          "Shreeya Suresh",
+          "Kishan Naik",
+          "S.Balamurugan",
+          "Manasee Ambhore",
+        ]);
+        return !removed.has(card.title);
+      })
+      .map((card) => {
+        if (card.title === "Harsh Chourasia") {
+          return { ...card, description: "Captain🧑‍✈️ - Controls" };
+        }
+        if (card.title === "Om Gunjal") {
+          return { ...card, description: "Vice-Captain👨‍✈️ - Circuits" };
+        }
+        if (card.title === "Jayesh Sangave") {
+          return { ...card, description: "Controls" };
+        }
+        if (card.title === "Avnish Deshmukh") {
+          return { ...card, description: "Controls" };
+        }
+        return card;
+      }),
+    {
+      description: "Mech",
+      title: "Aaditya Patil",
+      src: "/team/Aditya P.jpg",
+      ctaLink: "https://www.linkedin.com/in/aaditya-patil-300444246/",
+      content: () => {
+        return (
+          <p>
+            Aaditya Patil, a robotics engineering student, is skilled in CAD
+            design, mechanical system integration, and industrial manufacturing.
+            As a proactive MIT Tech Team member, he applies hands-on expertise
+            in manufacturing processes, optimizing designs to improve robot&apos;s
+            reliability. Aaditya&apos;s proficiency in 3D modeling and component
+            analysis showcases his practical and theoretical knowledge,
+            demonstrating his dedication to pushing the boundaries of robotics.
+          </p>
+        );
+      },
+    },
+    {
+      description: "Mech",
+      title: "Rameshwar Patil",
+      src: "/team/Rameshwar Patil.jpg",
+      ctaLink: "https://www.linkedin.com/in/rameshwar-patil-0000000002/",
+      content: () => {
+        return (
+          <p>
+            Rameshwar Patil is a versatile mechanical engineer specializing in
+            the integration of mechatronics and advanced manufacturing. He has
+            been the Ex-Vice Captain at MIT Tech Team and he has also been a
+            driving force behind the development of high-performance robotic
+            platforms, with a specific focus on optimizing drivetrain
+            efficiency and structural integrity for competitive robotics.
+          </p>
+        );
+      },
+    },
+  ],
+  "2025-26": [
+    ...cards
+      .filter((card) => {
+        const removed = new Set([
+          "Rameshwar Patil",
+          "Aaditya Patil",
+          "Sujal Bafna",
+          "Piyusha Patil",
+        ]);
+        return !removed.has(card.title);
+      })
+      .map((card) => {
+        if (card.title === "Jayesh Sangave") {
+          return { ...card, description: "Captain🧑‍✈️ - Controls" };
+        }
+        if (card.title === "Avnish Deshmukh") {
+          return { 
+            ...card, 
+            description: "Controls",
+            content: () => {
+              return (
+                <p>
+                  Avnish Deshmukh is a dedicated member of the Controls team, with interests spanning
+                  electronics, coding, and mechanical design. He contributes to embedded systems and control
+                  software within the team’s robotics stack. Explore more about his work at avnish2105.github.io.
+                </p>
+              );
+            },
+          };
+        }
+        if (card.title === "Om Gunjal") {
+          return {
+            ...card,
+            description: "Circuits",
+            content: () => {
+              return (
+                <p>
+                  Om Gunjal focuses on embedded systems and circuit design in
+                  the circuits department. In addition to his technical role, he
+                  manages the team’s finances and oversees non-technical
+                  operations, fostering collaboration among team members. His
+                  contributions play a vital role in ensuring the team remains
+                  on track to achieve its goals.
+                </p>
+              );
+            },
+          };
+        }
+        if (card.title === "Harsh Chourasia") {
+          return {
+            ...card,
+            description: "Controls",
+            content: () => {
+              return (
+                <p>
+                  A third-year Computer Science student, he is a skilled ROS
+                  developer with a solid foundation in autonomous robotics and
+                  embedded systems. As a member of the MIT Tech Team, he has
+                  played a crucial role in developing and deploying advanced
+                  robotic solutions, demonstrating expertise in ROS2, real-time
+                  navigation, and control interfaces. He also contributes as a
+                  project and timeline manager for the team.
+                </p>
+              );
+            },
+          };
+        }
+        return card;
+      }),
+  ],
+};
+
+const Page = () => {
+  const searchParams = useSearchParams();
+  const [selectedBatch, setSelectedBatch] = useState<BatchValue>("2024-25");
+
+  useEffect(() => {
+    const batch = searchParams.get("batch");
+    if (batch === "2024-25" || batch === "2025-26") {
+      setSelectedBatch(batch);
+    }
+  }, [searchParams]);
+
+  const currentCards = batchCards[selectedBatch];
+
   return (
     <div className="max-w-7xl mx-auto py-32 px-4 md:px-8 lg:px-10">
-      <h2 className="text-4xl lg:text-5xl font-semibold  mb-4 text-[#c73808]">
-        Meet Our Team 👏
-      </h2>
-      <p className="mb-16 text-white dark:text-neutral-300 text-sm md:text-base max-w-2xl text-justify">
-        Our team is a group of dedicated individuals who are passionate about
-        their work.
-      </p>
-      <Teams cards={cards} />
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+        <div>
+          <h2 className="text-4xl lg:text-5xl font-semibold mb-4 text-[#c73808]">
+            Meet Our Team 👏
+          </h2>
+          <p className="text-white dark:text-neutral-300 text-sm md:text-base max-w-2xl text-justify">
+            Our team is a group of dedicated individuals who are passionate about
+            their work.
+          </p>
+        </div>
+        <div className="w-full md:w-64">
+          <Select
+            value={selectedBatch}
+            onValueChange={(value) => setSelectedBatch(value as BatchValue)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select batch" />
+            </SelectTrigger>
+            <SelectContent>
+              {batchOptions.map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                  {option.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      {currentCards.length > 0 ? (
+        <Teams key={selectedBatch} cards={currentCards} />
+      ) : (
+        <div className="mt-16 text-white dark:text-neutral-300 text-sm md:text-base">
+          Team details for the selected batch will be added soon.
+        </div>
+      )}
     </div>
   );
 };
 
-export default page;
+export default Page;

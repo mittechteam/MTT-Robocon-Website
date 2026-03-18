@@ -1,11 +1,12 @@
 // components/navbar/animated-mobile-nav.tsx
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export default function AnimatedMobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTeamOpen, setIsTeamOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -30,23 +31,96 @@ export default function AnimatedMobileNav() {
           </button>
         </div>
         <nav className="flex-grow flex flex-col justify-center space-y-4 text-4xl font-bold">
-          {[
-            { href: "/", label: "home." },
-            { href: "/team", label: "team." },
-            { href: "/achievements", label: "achievements." },
-            { href: "/gallery", label: "gallery." },
-            { href: "/alumni", label: "alumni." },
-            { href: "/contact", label: "contact." },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              className="opacity-70 hover:opacity-100 transition-opacity"
-              href={item.href}
-              onClick={() => setIsOpen(false)}
+          <Link
+            className="opacity-70 hover:opacity-100 transition-opacity"
+            href="/"
+            onClick={() => {
+              setIsOpen(false);
+              setIsTeamOpen(false);
+            }}
+          >
+            home.
+          </Link>
+
+          <div className="space-y-2">
+            <button
+              type="button"
+              className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
+              onClick={() => setIsTeamOpen((open) => !open)}
             >
-              {item.label}
-            </Link>
-          ))}
+              <span>team.</span>
+              <ChevronDown
+                className={`w-6 h-6 transition-transform duration-200 ${
+                  isTeamOpen ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {isTeamOpen && (
+              <div className="ml-4 flex flex-col space-y-2 text-2xl font-semibold">
+                <Link
+                  href="/team?batch=2025-26"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsTeamOpen(false);
+                  }}
+                >
+                  current team
+                </Link>
+                <Link
+                  href="/team?batch=2024-25"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsTeamOpen(false);
+                  }}
+                >
+                  2024–25 batch
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link
+            className="opacity-70 hover:opacity-100 transition-opacity"
+            href="/achievements"
+            onClick={() => {
+              setIsOpen(false);
+              setIsTeamOpen(false);
+            }}
+          >
+            achievements.
+          </Link>
+          <Link
+            className="opacity-70 hover:opacity-100 transition-opacity"
+            href="/gallery"
+            onClick={() => {
+              setIsOpen(false);
+              setIsTeamOpen(false);
+            }}
+          >
+            gallery.
+          </Link>
+          <Link
+            className="opacity-70 hover:opacity-100 transition-opacity"
+            href="/alumni"
+            onClick={() => {
+              setIsOpen(false);
+              setIsTeamOpen(false);
+            }}
+          >
+            alumni.
+          </Link>
+          <Link
+            className="opacity-70 hover:opacity-100 transition-opacity"
+            href="/contact"
+            onClick={() => {
+              setIsOpen(false);
+              setIsTeamOpen(false);
+            }}
+          >
+            contact.
+          </Link>
         </nav>
         <div className="flex justify-between items-end">
           <div className="flex space-x-4">
