@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useId, useRef, useState } from "react";
+import React, { useEffect, useId, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { LinkedinIcon } from 'lucide-react';
@@ -19,6 +19,15 @@ export default function Teams({ cards }: TeamProps) {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
+
+  const dedupedCards = useMemo(() => {
+    const seen = new Set<string>();
+    return cards.filter((card) => {
+      if (seen.has(card.title)) return false;
+      seen.add(card.title);
+      return true;
+    });
+  }, [cards]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -40,34 +49,30 @@ export default function Teams({ cards }: TeamProps) {
   useOutsideClick(ref, () => setActive(null));
 
   // Sort cards by role
-  const facultyMentor = cards.find(card => /Faculty Mentor/i.test(card.description));
-  const captainByDesc = cards.find(card => /\bCaptain\b/i.test(card.description) && !/\bVice[-\s]?Captain\b/i.test(card.description));
-  const viceCaptainByDesc = cards.find(card => /\bVice[-\s]?Captain\b/i.test(card.description));
-  const captain =
-    captainByDesc ??
-    cards.find(card => ["Jayesh Sangave", "Harsh Chourasia"].includes(card.title));
-  const viceCaptain =
-    viceCaptainByDesc ??
-    cards.find(card => ["Avnish Deshmukh", "Om Gunjal"].includes(card.title));
-  const controlsMembers = cards.filter(card => 
+  const facultyMentor = dedupedCards.find(card => /Faculty Mentor/i.test(card.description));
+  const captainByDesc = dedupedCards.find(card => /\bCaptain\b/i.test(card.description) && !/\bVice[-\s]?Captain\b/i.test(card.description));
+  const viceCaptainByDesc = dedupedCards.find(card => /\bVice[-\s]?Captain\b/i.test(card.description));
+  const captain = captainByDesc || null;
+  const viceCaptain = viceCaptainByDesc || null;
+  const controlsMembers = dedupedCards.filter(card => 
     card.description.includes("Controls") &&
     !card.description.includes("Faculty Mentor") &&
     (!captain || card.title !== captain.title) &&
     (!viceCaptain || card.title !== viceCaptain.title)
   );
-  const circuitsMembers = cards.filter(card => 
+  const circuitsMembers = dedupedCards.filter(card => 
     card.description.includes("Circuits") &&
     !card.description.includes("Faculty Mentor") &&
     (!captain || card.title !== captain.title) &&
     (!viceCaptain || card.title !== viceCaptain.title)
   );
-  const mechMembers = cards.filter(card => 
+  const mechMembers = dedupedCards.filter(card => 
     card.description.includes("Mech") &&
     !card.description.includes("Faculty Mentor") &&
     (!captain || card.title !== captain.title) &&
     (!viceCaptain || card.title !== viceCaptain.title)
   );
-  const nonTechMembers = cards.filter(card => 
+  const nonTechMembers = dedupedCards.filter(card => 
     card.description.includes("Non-Tech") &&
     !card.description.includes("Faculty Mentor") &&
     (!captain || card.title !== captain.title) &&
@@ -210,15 +215,23 @@ export default function Teams({ cards }: TeamProps) {
           </div>
         )}
 
-        {/* Captain and Vice-Captain Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {captain && (
-            <TeamCard card={captain} id={id} setActive={setActive} />
-          )}
-          {viceCaptain && (
-            <TeamCard card={viceCaptain} id={id} setActive={setActive} />
-          )}
-        </div>
+        {/* Captain and (optional) Vice-Captain Row */}
+        {captain && !viceCaptain ? (
+          <div className="flex justify-center">
+            <div className="w-full max-w-sm">
+              <TeamCard card={captain} id={id} setActive={setActive} />
+            </div>
+          </div>
+        ) : (
+          <div className={`grid grid-cols-1 ${viceCaptain ? "md:grid-cols-2" : "md:grid-cols-1"} gap-4`}>
+            {captain && (
+              <TeamCard card={captain} id={id} setActive={setActive} />
+            )}
+            {viceCaptain && (
+              <TeamCard card={viceCaptain} id={id} setActive={setActive} />
+            )}
+          </div>
+        )}
 
         {/* Other Members Grid */}
         <div className="space-y-8">

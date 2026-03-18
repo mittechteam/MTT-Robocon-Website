@@ -425,14 +425,77 @@ const cards = [
 ];
 
 const batchOptions = [
+  { value: "2025-26", label: "Current Team" },
   { value: "2024-25", label: "2024–25 Batch" },
-  { value: "2025-26", label: "2025–26 Batch" },
 ] as const;
 
 type BatchValue = (typeof batchOptions)[number]["value"];
 
 const batchCards: Record<BatchValue, typeof cards> = {
-  "2024-25": cards.filter((c) => c.title !== "Aaditya Patil"),
+  "2024-25": [
+    ...cards
+      .filter((card) => {
+        const removed = new Set([
+          "Shreeya Suresh",
+          "Kishan Naik",
+          "S.Balamurugan",
+          "Manasee Ambhore",
+        ]);
+        return !removed.has(card.title);
+      })
+      .map((card) => {
+        if (card.title === "Harsh Chourasia") {
+          return { ...card, description: "Captain🧑‍✈️ - Controls" };
+        }
+        if (card.title === "Om Gunjal") {
+          return { ...card, description: "Vice-Captain👨‍✈️ - Circuits" };
+        }
+        if (card.title === "Jayesh Sangave") {
+          return { ...card, description: "Controls" };
+        }
+        if (card.title === "Avnish Deshmukh") {
+          return { ...card, description: "Controls" };
+        }
+        return card;
+      }),
+    {
+      description: "Mech",
+      title: "Aaditya Patil",
+      src: "/team/Aditya P.jpg",
+      ctaLink: "https://www.linkedin.com/in/aaditya-patil-300444246/",
+      content: () => {
+        return (
+          <p>
+            Aaditya Patil, a robotics engineering student, is skilled in CAD
+            design, mechanical system integration, and industrial manufacturing.
+            As a proactive MIT Tech Team member, he applies hands-on expertise
+            in manufacturing processes, optimizing designs to improve robot&apos;s
+            reliability. Aaditya&apos;s proficiency in 3D modeling and component
+            analysis showcases his practical and theoretical knowledge,
+            demonstrating his dedication to pushing the boundaries of robotics.
+          </p>
+        );
+      },
+    },
+    {
+      description: "Mech",
+      title: "Rameshwar Patil",
+      src: "/team/Rameshwar Patil.jpg",
+      ctaLink: "https://www.linkedin.com/in/rameshwar-patil-0000000002/",
+      content: () => {
+        return (
+          <p>
+            Rameshwar Patil is a versatile mechanical engineer specializing in
+            the integration of mechatronics and advanced manufacturing. He has
+            been the Ex-Vice Captain at MIT Tech Team and he has also been a
+            driving force behind the development of high-performance robotic
+            platforms, with a specific focus on optimizing drivetrain
+            efficiency and structural integrity for competitive robotics.
+          </p>
+        );
+      },
+    },
+  ],
   "2025-26": [
     ...cards
       .filter((card) => {
@@ -449,7 +512,19 @@ const batchCards: Record<BatchValue, typeof cards> = {
           return { ...card, description: "Captain🧑‍✈️ - Controls" };
         }
         if (card.title === "Avnish Deshmukh") {
-          return { ...card, description: "Vice-Captain👨‍✈️ - Controls" };
+          return { 
+            ...card, 
+            description: "Controls",
+            content: () => {
+              return (
+                <p>
+                  Avnish Deshmukh is a dedicated member of the Controls team, with interests spanning
+                  electronics, coding, and mechanical design. He contributes to embedded systems and control
+                  software within the team’s robotics stack. Explore more about his work at avnish2105.github.io.
+                </p>
+              );
+            },
+          };
         }
         if (card.title === "Om Gunjal") {
           return {
@@ -490,86 +565,6 @@ const batchCards: Record<BatchValue, typeof cards> = {
         }
         return card;
       }),
-    {
-      description: "Controls",
-      title: "Shreeya Suresh",
-      src: "/team/Shreeya.JPG",
-      ctaLink: "https://www.linkedin.com/in/shreeya-suresh-2b92ab348/",
-      content: () => {
-        return (
-          <p>
-            Shreeya is a robotics enthusiast with a strong interest in
-            perception and navigation systems. As a member of the MIT Tech Team,
-            she has previously worked on computer vision and perception,
-            focusing on depth estimation for real-time visual localization. She
-            is familiar with ROS and continues to build her understanding of
-            robotic software frameworks through ongoing learning and
-            experimentation. On the embedded side, Shreeya works with sensors
-            and actuators to implement navigation on STM32 microcontrollers,
-            exploring different navigation algorithms and developing a custom
-            Pure Pursuit implementation on an embedded environment.
-          </p>
-        );
-      },
-    },
-    {
-      description: "Circuits",
-      title: "Kishan Naik",
-      src: "/team/Kishan.JPG",
-      ctaLink: "https://www.linkedin.com/in/kishan-naik-b40b0632b/",
-      content: () => {
-        return (
-          <p>
-            Kishan Naik is an embedded circuit designer at the MIT Tech Team,
-            with a primary focus on PCB design and embedded firmware
-            development. He has designed and developed a customized STM MCM
-            board, demonstrating strong expertise in STM32-based systems and
-            embedded electronics. In addition to his strong debugging skills,
-            Kishan has hands-on experience with register-level coding, allowing
-            for low-level system control and performance optimization. He also
-            contributes to vendor management, playing a key role in coordinating
-            with suppliers and streamlining procurement processes.
-          </p>
-        );
-      },
-    },
-    {
-      description: "Circuits",
-      title: "S. Balamurugan",
-      src: "/team/Bala.JPG",
-      ctaLink: "https://www.linkedin.com/in/s-balamurugan-11598531a/",
-      content: () => {
-        return (
-          <p>
-            S. Balamurugan is an integral member of the MIT Tech Team’s Circuits
-            Department, having joined in August 2023. A second-year BTech
-            student, he possesses a strong foundation in embedded systems, with
-            hands-on experience in embedded programming using HAL drivers and
-            register-level coding. He actively contributes to both technical and
-            operational aspects of the team, including finance and management
-            (F&amp;M) for the club. In addition to his technical
-            responsibilities, Bala is involved in various non-technical
-            initiatives, ensuring the smooth functioning of the team. With a
-            keen interest in robotics and automation, he brings a reliable and
-            versatile approach to his role within the MIT Tech Team.
-          </p>
-        );
-      },
-    },
-    {
-      description: "Non-Tech",
-      title: "Manasee Ambhore",
-      src: "/team/Manasee.jpg",
-      ctaLink: "https://www.linkedin.com/in/manasee-ambhore-87ab65287/",
-      content: () => {
-        return (
-          <p>
-            Manasee Ambhore, a 3rd year BTECH student, works in events
-            management, providing the team various non-technical support.
-          </p>
-        );
-      },
-    },
   ],
 };
 
