@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Teams from "./teams";
 import {
   Select,
@@ -9,6 +9,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useSearchParams } from "next/navigation";
+
+export const dynamic = "force-dynamic";
 
 const cards = [
   {
@@ -31,7 +33,7 @@ const cards = [
     },
   },
   {
-    description: "Captain🧑‍✈️ - Controls",
+    description: "Controls",
     title: "Jayesh Sangave",
     src: "/team/Jayesh S.jpg",
     ctaLink:
@@ -39,7 +41,7 @@ const cards = [
     content: () => {
       return (
         <p>
-          Jayesh Sangave serves as the Vice Captain of his team, is an integral member of the MIT Tech Team&apos;s
+          Jayesh Sangave serves as the Captain of this team, is an integral member of the MIT Tech Team&apos;s
           Controls Department, having joined in August 2023. A third-year BTech
           CSE student, he has a solid foundation in microcontrollers and
           embedded systems, contributing to both technical and operational
@@ -54,7 +56,7 @@ const cards = [
     },
   },
   {
-    description: "Vice-Captain👨‍✈️ - Controls",
+    description: "Controls",
     title: "Avnish Deshmukh",
     src: "/team/VIN_0376.JPG",
     ctaLink: "https://www.linkedin.com/in/avnish-deshmukh/",
@@ -68,7 +70,7 @@ const cards = [
     },
   },
   {
-    description: "Circuits",
+    description: "Vice-Captain👨‍✈️ - Circuits",
     title: "Om Gunjal",
     src: "/team/OM_GUNJAL.jpg",
     ctaLink: "https://www.linkedin.com/in/om-gunjal-77b035255/",
@@ -87,7 +89,7 @@ const cards = [
     },
   },
   {
-    description: "Controls",
+    description: "Captain🧑‍✈️ - Controls",
     title: "Harsh Chourasia",
     src: "/team/Harsh C.jpg",
     ctaLink: "https://www.linkedin.com/in/harsh-chourasia-608889281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -382,7 +384,7 @@ const cards = [
   {
     description: "Non-Tech",
     title: "Swapnaja Magarde",
-    src: "/team/Swapnaja_id.jpg",
+    src: "/team/Swapnaja_id.jpeg",
     ctaLink: "https://www.linkedin.com/in/swapnaja-magarde-653a98226/",
     content: () => {
       return (
@@ -422,81 +424,39 @@ const cards = [
       );
     },
   },
+  {
+    description: "Mech",
+    title: "Aaditya Patil",
+    src: "/team/Aditya P.jpg",
+    ctaLink: "https://www.linkedin.com/in/aaditya-patil-300444246/",
+    content: () => {
+      return (
+        <p>
+          Aaditya Patil, a robotics engineering student, is skilled in CAD design, mechanical system integration, and industrial manufacturing. As a proactive MIT Tech Team member, he applies hands-on expertise in manufacturing processes, optimizing designs to improve robot&apos;s reliability. Aaditya&apos;s proficiency in 3D modeling and component analysis showcases his practical and theoretical knowledge, demonstrating his dedication to pushing the boundaries of robotics.
+        </p>
+      );
+    },
+  },
 ];
 
 const batchOptions = [
-  { value: "2025-26", label: "Current Team" },
-  { value: "2024-25", label: "2024–25 Batch" },
+  { value: "current", label: "Current Team" },
+  { value: "2024-25", label: "2024–25 Team" },
 ] as const;
 
-type BatchValue = (typeof batchOptions)[number]["value"];
+type BatchValue = "current" | "2024-25" | "2025-26";
 
-const batchCards: Record<BatchValue, typeof cards> = {
-  "2024-25": [
-    ...cards
-      .filter((card) => {
-        const removed = new Set([
-          "Shreeya Suresh",
-          "Kishan Naik",
-          "S.Balamurugan",
-          "Manasee Ambhore",
-        ]);
-        return !removed.has(card.title);
-      })
-      .map((card) => {
-        if (card.title === "Harsh Chourasia") {
-          return { ...card, description: "Captain🧑‍✈️ - Controls" };
-        }
-        if (card.title === "Om Gunjal") {
-          return { ...card, description: "Vice-Captain👨‍✈️ - Circuits" };
-        }
-        if (card.title === "Jayesh Sangave") {
-          return { ...card, description: "Controls" };
-        }
-        if (card.title === "Avnish Deshmukh") {
-          return { ...card, description: "Controls" };
-        }
-        return card;
-      }),
-    {
-      description: "Mech",
-      title: "Aaditya Patil",
-      src: "/team/Aditya P.jpg",
-      ctaLink: "https://www.linkedin.com/in/aaditya-patil-300444246/",
-      content: () => {
-        return (
-          <p>
-            Aaditya Patil, a robotics engineering student, is skilled in CAD
-            design, mechanical system integration, and industrial manufacturing.
-            As a proactive MIT Tech Team member, he applies hands-on expertise
-            in manufacturing processes, optimizing designs to improve robot&apos;s
-            reliability. Aaditya&apos;s proficiency in 3D modeling and component
-            analysis showcases his practical and theoretical knowledge,
-            demonstrating his dedication to pushing the boundaries of robotics.
-          </p>
-        );
-      },
-    },
-    {
-      description: "Mech",
-      title: "Rameshwar Patil",
-      src: "/team/Rameshwar Patil.jpg",
-      ctaLink: "https://www.linkedin.com/in/rameshwar-patil-0000000002/",
-      content: () => {
-        return (
-          <p>
-            Rameshwar Patil is a versatile mechanical engineer specializing in
-            the integration of mechatronics and advanced manufacturing. He has
-            been the Ex-Vice Captain at MIT Tech Team and he has also been a
-            driving force behind the development of high-performance robotic
-            platforms, with a specific focus on optimizing drivetrain
-            efficiency and structural integrity for competitive robotics.
-          </p>
-        );
-      },
-    },
-  ],
-  "2025-26": [
+const batchCards: Record<"current" | "2024-25", typeof cards> = {
+  "2024-25": cards.filter(
+    (c) =>
+      !new Set([
+        "Kishan Naik",
+        "Manasee Ambhore",
+        "S.Balamurugan",
+        "Shreeya Suresh",
+      ]).has(c.title)
+  ),
+  current: [
     ...cards
       .filter((card) => {
         const removed = new Set([
@@ -504,6 +464,10 @@ const batchCards: Record<BatchValue, typeof cards> = {
           "Aaditya Patil",
           "Sujal Bafna",
           "Piyusha Patil",
+          "Shreeya Suresh",
+          "Kishan Naik",
+          "S.Balamurugan",
+          "Manasee Ambhore",
         ]);
         return !removed.has(card.title);
       })
@@ -568,18 +532,29 @@ const batchCards: Record<BatchValue, typeof cards> = {
   ],
 };
 
-const Page = () => {
+const TeamPageContent = () => {
   const searchParams = useSearchParams();
-  const [selectedBatch, setSelectedBatch] = useState<BatchValue>("2024-25");
+  const raw = searchParams.get("team");
+  const initialBatch = (raw === "2025-26" ? "2025-26" : (raw as BatchValue)) ?? "current";
+  const [selectedBatch, setSelectedBatch] = useState<BatchValue>(initialBatch);
 
   useEffect(() => {
-    const batch = searchParams.get("batch");
-    if (batch === "2024-25" || batch === "2025-26") {
-      setSelectedBatch(batch);
+    const batch = searchParams.get("team");
+    if (batch === "2024-25" || batch === "current" || batch === "2025-26") {
+      setSelectedBatch(batch as BatchValue);
     }
   }, [searchParams]);
 
-  const currentCards = batchCards[selectedBatch];
+  const normalizedKey = selectedBatch === "2025-26" ? "current" : selectedBatch;
+  const uniqByTitle = (arr: typeof cards) => {
+    const s = new Set<string>();
+    return arr.filter((c) => {
+      if (s.has(c.title)) return false;
+      s.add(c.title);
+      return true;
+    });
+  };
+  const currentCards = uniqByTitle(batchCards[normalizedKey as "current" | "2024-25"]);
 
   return (
     <div className="max-w-7xl mx-auto py-32 px-4 md:px-8 lg:px-10">
@@ -595,11 +570,13 @@ const Page = () => {
         </div>
         <div className="w-full md:w-64">
           <Select
-            value={selectedBatch}
-            onValueChange={(value) => setSelectedBatch(value as BatchValue)}
+            value={normalizedKey}
+            onValueChange={(value) =>
+              setSelectedBatch(value === "current" ? "2025-26" : (value as BatchValue))
+            }
           >
             <SelectTrigger>
-              <SelectValue placeholder="Select batch" />
+              <SelectValue placeholder="Select team" />
             </SelectTrigger>
             <SelectContent>
               {batchOptions.map((option) => (
@@ -620,6 +597,20 @@ const Page = () => {
         </div>
       )}
     </div>
+  );
+};
+
+const Page = () => {
+  return (
+    <Suspense
+      fallback={
+        <div className="max-w-7xl mx-auto py-32 px-4 md:px-8 lg:px-10 text-white dark:text-neutral-300">
+          Loading team...
+        </div>
+      }
+    >
+      <TeamPageContent />
+    </Suspense>
   );
 };
 

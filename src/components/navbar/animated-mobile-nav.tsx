@@ -58,7 +58,7 @@ export default function AnimatedMobileNav() {
             {isTeamOpen && (
               <div className="ml-4 flex flex-col space-y-2 text-2xl font-semibold">
                 <Link
-                  href="/team?batch=2025-26"
+                  href="/team?team=2025-26"
                   className="opacity-80 hover:opacity-100 transition-opacity"
                   onClick={() => {
                     setIsOpen(false);
@@ -68,14 +68,14 @@ export default function AnimatedMobileNav() {
                   current team
                 </Link>
                 <Link
-                  href="/team?batch=2024-25"
+                  href="/team?team=2024-25"
                   className="opacity-80 hover:opacity-100 transition-opacity"
                   onClick={() => {
                     setIsOpen(false);
                     setIsTeamOpen(false);
                   }}
                 >
-                  2024–25 batch
+                  2024–25 team
                 </Link>
               </div>
             )}
