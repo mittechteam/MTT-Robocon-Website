@@ -476,7 +476,19 @@ const batchCards: Record<"current" | "2024-25", typeof cards> = {
           return { ...card, description: "Captain🧑‍✈️ - Controls" };
         }
         if (card.title === "Avnish Deshmukh") {
-          return { ...card, description: "Vice-Captain👨‍✈️ - Controls" };
+          return { 
+            ...card, 
+            description: "Controls",
+            content: () => {
+              return (
+                <p>
+                  Avnish Deshmukh is a dedicated member of the Controls team, with interests spanning
+                  electronics, coding, and mechanical design. He contributes to embedded systems and control
+                  software within the team’s robotics stack. Explore more about his work at avnish2105.github.io.
+                </p>
+              );
+            },
+          };
         }
         if (card.title === "Om Gunjal") {
           return {
@@ -517,86 +529,6 @@ const batchCards: Record<"current" | "2024-25", typeof cards> = {
         }
         return card;
       }),
-    {
-      description: "Controls",
-      title: "Shreeya Suresh",
-      src: "/team/Shreeya.JPG",
-      ctaLink: "https://www.linkedin.com/in/shreeya-suresh-2b92ab348/",
-      content: () => {
-        return (
-          <p>
-            Shreeya is a robotics enthusiast with a strong interest in
-            perception and navigation systems. As a member of the MIT Tech Team,
-            she has previously worked on computer vision and perception,
-            focusing on depth estimation for real-time visual localization. She
-            is familiar with ROS and continues to build her understanding of
-            robotic software frameworks through ongoing learning and
-            experimentation. On the embedded side, Shreeya works with sensors
-            and actuators to implement navigation on STM32 microcontrollers,
-            exploring different navigation algorithms and developing a custom
-            Pure Pursuit implementation on an embedded environment.
-          </p>
-        );
-      },
-    },
-    {
-      description: "Circuits",
-      title: "Kishan Naik",
-      src: "/team/Kishan.JPG",
-      ctaLink: "https://www.linkedin.com/in/kishan-naik-b40b0632b/",
-      content: () => {
-        return (
-          <p>
-            Kishan Naik is an embedded circuit designer at the MIT Tech Team,
-            with a primary focus on PCB design and embedded firmware
-            development. He has designed and developed a customized STM MCM
-            board, demonstrating strong expertise in STM32-based systems and
-            embedded electronics. In addition to his strong debugging skills,
-            Kishan has hands-on experience with register-level coding, allowing
-            for low-level system control and performance optimization. He also
-            contributes to vendor management, playing a key role in coordinating
-            with suppliers and streamlining procurement processes.
-          </p>
-        );
-      },
-    },
-    {
-      description: "Circuits",
-      title: "S. Balamurugan",
-      src: "/team/Bala.JPG",
-      ctaLink: "https://www.linkedin.com/in/s-balamurugan-11598531a/",
-      content: () => {
-        return (
-          <p>
-            S. Balamurugan is an integral member of the MIT Tech Team’s Circuits
-            Department, having joined in August 2023. A second-year BTech
-            student, he possesses a strong foundation in embedded systems, with
-            hands-on experience in embedded programming using HAL drivers and
-            register-level coding. He actively contributes to both technical and
-            operational aspects of the team, including finance and management
-            (F&amp;M) for the club. In addition to his technical
-            responsibilities, Bala is involved in various non-technical
-            initiatives, ensuring the smooth functioning of the team. With a
-            keen interest in robotics and automation, he brings a reliable and
-            versatile approach to his role within the MIT Tech Team.
-          </p>
-        );
-      },
-    },
-    {
-      description: "Non-Tech",
-      title: "Manasee Ambhore",
-      src: "/team/Manasee.jpg",
-      ctaLink: "https://www.linkedin.com/in/manasee-ambhore-87ab65287/",
-      content: () => {
-        return (
-          <p>
-            Manasee Ambhore, a 3rd year BTECH student, works in events
-            management, providing the team various non-technical support.
-          </p>
-        );
-      },
-    },
   ],
 };
 
